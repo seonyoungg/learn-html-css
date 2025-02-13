@@ -1,3 +1,21 @@
+<!--=================================================
+                [상대경로/절대경로]
+
+1. 절대경로
+- https://www.naver.com/
+- file://c:\likelion-bootcamp/learn-html-css/src/html/01 
+- 서버가 열린 위치로부터 경로 탐색
+
+2. 상대경로
+- 내가 있는 경로로부터 경로 탐색
+- * 개인서버 배포 시에는 Github Page의 경우 상대경로 사용해야 함
+
+ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
+    · 절대경로 /src/html/01 
+    · 절대경로 ./src/html/01 
+    
+==================================================-->
+
 <!doctype html>
 <html lang="ko-KR">
   <head>
@@ -8,9 +26,8 @@
   <body>
     <h1>HTML/CSS</h1>
     <ul>
-      <li>
-        <a href="./src/html/01-basic-structure.html">HTML 기본 구조</a>
-      </li>
+      <li><a href="/src/html/01-basic-structure.html">HTML 기본 구조</a></li>
+      <li><a href="/src/html/02-heading-paragraph.html">제목과 단락</a></li>
     </ul>
   </body>
 </html>
