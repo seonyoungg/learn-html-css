@@ -1,0 +1,64 @@
+<!--=================================================
+                [하이퍼링크]
+
+1) href: 클릭할 링크의 주소
+2) target속성
+· _blank: 새로운 탭이나 창에서 열림
+· _self: 현재 창에서 열림 (기본값)
+· _parent: 부모 프레임에서 열림
+· _top: 전체 페이지에서 열림
+3) rel: 링크와 연결된 리소스 사이의 관계 설명
+· nofollow: 링크를 검색 엔진에 의해 따라가지 않도록 설정
+· noopener: 새 창을 열 때, 원본 창과의 JavaScript 연동을 방지 (보안)
+· noreferrer: referrer 정보를 보내지 않음
+* target="_blank" 속성을 사용하는 경우 rel="noopener noreferrer" 과 같이 암묵적으로 사용
+
+* 글로벌속성 : style, id, class, title
+
+==================================================-->
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>하이퍼링크</title>
+  </head>
+  <body>
+    <h1>하이퍼링크</h1>
+    <section>
+      <h2>텍스트 링크</h2>
+      <a href="https://bootcamp.likelion.net/" target="_blank"
+        >멋쟁이 사자처럼 부트캠프</a
+      >
+      <br />
+      <a href="https://github.com/seonyoungg?tab=repositories" target="blank"
+        >Git Hub 연결하기</a
+      >
+      <br />
+      <a
+        href="https://www.naver.com/"
+        target="blank"
+        title="네이버 사이트로 이동합니다."
+        >네이버</a
+      >
+    </section>
+    <section>
+      <h2>이미지 링크</h2>
+      <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer"
+        ><img
+          src="/src/assets/apple/apple_watch.jpeg"
+          alt="애플워치"
+          width="200"
+        />
+      </a>
+    </section>
+    <section>
+      <h2>PDF 링크</h2>
+      <a
+        href="/src/assets/pdf/google-seo-guide-ko.pdf"
+        download="google-seo-guide-ko.pdf"
+        >구글 SEO 가이드
+      </a>
+    </section>
+  </body>
+</html>
