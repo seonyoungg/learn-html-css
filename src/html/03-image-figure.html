@@ -1,0 +1,89 @@
+<!--=================================================
+                [이미지태그 관련]
+
+· 이미지 속성 내 src, alt, srcset, sizes
+  1) alt (대체 텍스트) - 그림의 묘사화
+  이미지가 로드되지 않거나, 시각적으로 볼 수 없는 사용자에게 이미지의 내용을 설명하는 역할 
+  대체 텍스트는 웹 접근성을 개선하는 중요한 요소
+  화면 읽기 프로그램을 사용하는 사용자에게 이미지의 의미를 전달
+  
+· 이미지 최적화를 위한 알맞은 확장자 사용 필요 
+  1) 파일 크기가 작은 형식 : Webp, Avif, Svg
+
+<img
+  src="images/coffee.png"
+  alt="Coffee"
+  srcset="images/coffee.png 400w, images/coffee-xl.jpg 800w"
+  sizes="(max-width: 800px) 400px, 800px"
+/> 
+
+· <img> 태그로 svg파일을 로드하는 경우에는 alt속성을 통해 대체텍스트 입력이 가능
+· <svg> 태그 자체를 직접 사용하는 경우 alt속성이 사용되지 않기 때문에 aria-label 속성을 통한 대체텍스트 기록
+  ✅ aria-label 속성의 경우 다른 html 태그에도 사용 가능
+
+* reflow paint
+==================================================-->
+
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지와 피규어</title>
+  </head>
+  <body>
+    <section>
+      <h1>이미지 삽입하기</h1>
+      <img
+        src="/src/assets/food/cake.jpeg"
+        alt="Peace of Cake(한 조각의 평화) - 밀크레이프, 수플레치즈, 초코티라미수, 데블스초코, 더블치즈"
+      />
+      <br />
+      <img
+        src="/src/assets/food/icecream.webp"
+        alt="벤엔제리스 파인트 아이스크림"
+      />
+      <br />
+      <!-- 벡터이미지 -->
+      <img
+        src="/src/assets/svg/chitchat.svg"
+        alt="찜하기"
+        width="50"
+        height="50"
+      />
+      <svg
+        aria-label="1대1 채팅"
+        class="h-12 w-12"
+        viewBox="0 0 40 40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="a">
+            <stop stop-color="#ff0000" offset="0%"></stop>
+            <stop stop-color="#13577E" offset="100%"></stop>
+          </linearGradient>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="b">
+            <stop stop-color="#73DFF2" offset="0%"></stop>
+            <stop stop-color="#47B1EB" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+          <path
+            d="M28.872 22.096c.084.622.128 1.258.128 1.904 0 7.732-6.268 14-14 14-2.176 0-4.236-.496-6.073-1.382l-6.022 2.007c-1.564.521-3.051-.966-2.53-2.53l2.007-6.022A13.944 13.944 0 0 1 1 24c0-7.331 5.635-13.346 12.81-13.95A9.967 9.967 0 0 0 13 14c0 5.523 4.477 10 10 10a9.955 9.955 0 0 0 5.872-1.904z"
+            fill="url(#a)"
+            transform="translate(1 1)"
+          ></path>
+          <path
+            d="M35.618 20.073l2.007 6.022c.521 1.564-.966 3.051-2.53 2.53l-6.022-2.007A13.944 13.944 0 0 1 23 28c-7.732 0-14-6.268-14-14S15.268 0 23 0s14 6.268 14 14c0 2.176-.496 4.236-1.382 6.073z"
+            fill="url(#b)"
+            transform="translate(1 1)"
+          ></path>
+          <path
+            d="M18 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM24 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM30 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+            fill="#FFF"
+          ></path>
+        </g>
+      </svg>
+    </section>
+  </body>
+</html>
