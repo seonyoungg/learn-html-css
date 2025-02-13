@@ -1,7 +1,17 @@
 <!--=================================================
+                [오늘의 꿀팁]
+
+· 확장프로그램 : html-tag-wrapper
+· 명령팔레트 실행 
+- Emmet : Wrap with Abbreviaiton
+==================================================-->
+
+<!--=================================================
                 [하이퍼링크]
 
 1) href: 클릭할 링크의 주소
+· mailto: 메일보내기
+· tel: 전화걸기(모바일 환경일 때 전화연동)
 2) target속성
 · _blank: 새로운 탭이나 창에서 열림
 · _self: 현재 창에서 열림 (기본값)
@@ -11,20 +21,61 @@
 · nofollow: 링크를 검색 엔진에 의해 따라가지 않도록 설정
 · noopener: 새 창을 열 때, 원본 창과의 JavaScript 연동을 방지 (보안)
 · noreferrer: referrer 정보를 보내지 않음
-* target="_blank" 속성을 사용하는 경우 rel="noopener noreferrer" 과 같이 암묵적으로 사용
+* target="_blank" 속성을 사용하는 경우 rel="noopener noreferrer" 과 같이 암묵적으로 사용(보안 및 성능면에서 우수)
 
 * 글로벌속성 : style, id, class, title
 
 ==================================================-->
+
 <!doctype html>
 <html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>하이퍼링크</title>
+    <style>
+      div.example {
+        box-sizing: border-box;
+        padding: 1rem;
+        border: 1px solid #dee2e6;
+      }
+      div.example:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
   <body>
     <h1>하이퍼링크</h1>
+
+    <section>
+      <h2>하이퍼링크 및 이미지UI 예제</h2>
+      <div class="example me">
+        <img
+          src="/src/assets/cafew/card-02-@1x.jpg"
+          alt="사람 3명이 테이블에서 공부하는 모습"
+        />
+        <h3>RESPONSIVE WEB <br />DESIGN STRATEGIES</h3>
+        <p>반응형 웹디자인 전력</p>
+        <a href="/" target="_blank" rel="noopener noreferrer">강의 정보</a>
+      </div>
+
+      <div class="example teacher">
+        <figure>
+          <img
+            src="/src/assets/cafew/card-02-@1x.jpg"
+            alt="사람 3명이 테이블에서 공부하는 모습"
+          />
+          <figcaption>
+            <p>
+              <strong>RESPONSIVE WEB <br />DESIGN STRATEGIES</strong>
+            </p>
+            <p>반응형 웹디자인 전력</p>
+          </figcaption>
+        </figure>
+        <a href="/" target="_blank" rel="noopener noreferrer">강의 정보</a>
+      </div>
+    </section>
+
     <section>
       <h2>텍스트 링크</h2>
       <a href="https://bootcamp.likelion.net/" target="_blank"
@@ -42,6 +93,7 @@
         >네이버</a
       >
     </section>
+
     <section>
       <h2>이미지 링크</h2>
       <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer"
@@ -52,12 +104,36 @@
         />
       </a>
     </section>
+
     <section>
       <h2>PDF 링크</h2>
       <a
         href="/src/assets/pdf/google-seo-guide-ko.pdf"
         download="google-seo-guide-ko.pdf"
         >구글 SEO 가이드
+      </a>
+    </section>
+
+    <section>
+      <h2>전화번호 또는 이메일 주소 하이퍼 링크</h2>
+      <a href="mailto:seulbinim@gmail.com?subject=문의사항"
+        >seulbinim@gmail.com</a
+      >
+      <br />
+      <a href="tel:+821023456789">고객센터 010-2345-6789</a>
+    </section>
+
+    <section>
+      <!--#####===== block 과 inline태그로 인한 부모>자식 태그 상관관계=====#####-->
+      <!--##### html5이전 (일반적인 방식) #####-->
+      <h2><a href="/"></a></h2>
+      <p><a href="/"></a></p>
+
+      <!--##### html5부터 가능 : 문법상으로 가능#####-->
+      <!-- 스크린 리더 입장에서는 불편함 -->
+      <a href="/">
+        <h2></h2>
+        <p></p>
       </a>
     </section>
   </body>
