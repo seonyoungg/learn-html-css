@@ -4,6 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프레이징 요소</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        white-space: nowrap;
+      }
+
+      button {
+        padding: 1rem;
+      }
+    </style>
   </head>
   <body>
     <h1>텍스트 레벨 시멘틱 요소</h1>
@@ -20,6 +43,15 @@
         <b><span class="sr-only">강의 평점</span>5점</b>
         <i><span class="sr-only">수강생</span>우정민</i>
       </p>
+    </div>
+    <hr />
+    <div>
+      <!-- 📢 사용자가 버튼을 보면 → 🔍 아이콘만 보임
+           📢 스크린 리더는 → "검색하기"라고 읽음 -->
+      <button>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <span class="sr-only">검색하기</span>
+      </button>
     </div>
   </body>
 </html>
