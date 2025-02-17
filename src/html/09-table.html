@@ -18,14 +18,12 @@
         border-collapse: collapse;
       }
       table {
-        width: 100%;
-        max-width: 400px;
         table-layout: fixed;
         margin-bottom: 1rem;
       }
       table > caption {
         padding: 1rem 0;
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 600;
       }
       th,
@@ -46,10 +44,10 @@
           멋쟁이 사자처럼 프론트엔드 스쿨 13기 스텝
         </caption>
         <colgroup>
-          <col style="width: 10%" />
-          <col style="width: 30%" />
-          <col style="width: 30%" />
-          <col style="width: 30%" />
+          <col style="width: 20%" />
+          <col style="width: auto" />
+          <col style="width: auto" />
+          <col style="width: auto" />
         </colgroup>
         <thead>
           <tr>
@@ -135,6 +133,77 @@
           <tr>
             <td colspan="3">&nbsp;</td>
             <td colspan="1">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h3>테이블 예제</h3>
+      <table>
+        <col />
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <thead>
+          <tr>
+            <td rowspan="2"></td>
+            <th scope="colgroup" colspan="2">Mars</th>
+            <th scope="colgroup" colspan="2">Venus</th>
+          </tr>
+          <tr>
+            <th scope="col">Produce</th>
+            <th scope="col">Sold</th>
+            <th scope="col">Produce</th>
+            <th scope="col">Sold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Example</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h3>테이블예제</h3>
+      <table>
+        <caption>
+          입문자를 위한 GIT과 HTML&CSS 과정<br />
+          <span
+            >학습시간, 난이도, 교육비지원, 평가항목, 수료기준, 정원, 교재 정보
+            등을 나타내는 표</span
+          >
+        </caption>
+        <tbody>
+          <tr>
+            <th id="study-time">학습시간</th>
+            <td headers="study-time">09:00 ~ 17:00 (28시간)</td>
+            <th id="study-difficulty">난이도</th>
+            <td headers="study-difficulty">초급</td>
+          </tr>
+          <tr>
+            <th id="educational-expenses">교육비 지원</th>
+            <td headers="educational-expenses">고용보험 비환급</td>
+            <th id="evaluation-items">평가항목</th>
+            <td headers="evaluation-items">출석률 100%</td>
+          </tr>
+          <tr>
+            <th id="completion-criteria">수료기준</th>
+            <td headers="completion-criteria">총점 80점 이상 시 수료</td>
+            <th id="class-capacity">정원</th>
+            <td headers="class-capacity">24명</td>
+          </tr>
+          <tr>
+            <th id="learning-textbook">교재정보</th>
+            <td colspan="3" headers="learning-textbook">
+              입문자를 위한 GIT과 HTML&CSS <br />
+              HTML&CSS 웹사이트 개발과 디자인 기초(35,0000원)
+            </td>
           </tr>
         </tbody>
       </table>
