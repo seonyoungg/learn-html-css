@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼요소 & 인풋요소</title>
+  </head>
+  <body>
+    <h1>form요소</h1>
+    <h2>input요소</h2>
+    <!-- 한줄입력서식 -->
+    <form action="/">
+      <fieldset>
+        <legend>필수 입력 항목</legend>
+      </fieldset>
+    </form>
+
+    <form action="/">
+      <fieldset>
+        <legend>선택 입력 항목</legend>
+        <div>
+          <label for="{idValue}">{레이블텍스트}</label>
+          <input type="text" id="{idValue}" />
+        </div>
+      </fieldset>
+    </form>
+
+    <form action="">
+      <fieldset style="display: flex; flex-direction: column; gap: 0.5rem">
+        <legend>폼 서식</legend>
+        <div>
+          <label for="userName">이름</label>
+          <input type="text" id="userName" />
+        </div>
+        <div>
+          <label for="userPwd">패스워드</label>
+          <input type="password" id="userPwd" />
+        </div>
+        <div>
+          <label for="likelionSearch">검색</label>
+          <input type="search" id="likelionSearch" />
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- 접근성 측면
+    [form]
+    1. 1:1로 대응되는 label요소를 가져야 함
+    - kebab-case
+    - snake_case
+    - camelCase
+    - PascalCase
+    -->
+  </body>
+</html>
