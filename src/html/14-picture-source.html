@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picture & Source</title>
+  </head>
+  <body>
+    <h1>Picture & Source</h1>
+
+    <!-- 
+    Responsive images
+    반응형이미지
+
+    * 디바이스에 최적화된 이미지의 사용 필요
+    -->
+
+    <div>
+      <!-- srcset, sizes 속성 -->
+      <img
+        src="/src/assets/logo/netflix@1x.png"
+        srcset="
+          /src/assets/logo/netflix@1x.png 1x,
+          /src/assets/logo/netflix@2x.png 2x
+        "
+        alt="넷플릭스"
+      />
+      <!-- 이미지 형식 -->
+      <!-- 아래와 같은 경우 되도록 webp가 우선적으로 쓰이게 됨
+        지원하지 않는 경우를 대비해 png대비시켜놓을 필요가 있음-->
+      <img
+        src="/src/assets/logo/netflix@1x.png"
+        srcset="
+          /src/assets/logo/netflix@1x.webp 1x,
+          /src/assets/logo/netflix@2x.webp 2x
+        "
+        alt=""
+      />
+    </div>
+
+    <!-- picture = img container : picture >img 의 구조 -->
+    <!-- figure picture -->
+    <div>
+      <h2>W Descriptor 예시</h2>
+      <figure style="margin: 0">
+        <picture>
+          <img
+            src="/src/assets/rwd/small-550.jpg"
+            srcset="
+              /src/assets/rwd/small-550.jpg    550w,
+              /src/assets/rwd/medium-1024.jpg 1024w,
+              /src/assets/rwd/large-1600.jpg  1600w,
+              /src/assets/rwd/normal-1920.jpg 1920w
+            "
+            sizes="(max-width: 768px)  550px, 100vw"
+            alt=""
+          />
+        </picture>
+        <figcaption></figcaption>
+      </figure>
+    </div>
+
+    <div>
+      <h2>W Descriptor 예시2</h2>
+      <picture>
+        <source
+          srcset="/src/assets/rwd/small-550.jpg 550w"
+          media="(max-width:500px)"
+        />
+        <source
+          srcset="/src/assets/rwd/medium-1024.jpg 1024w"
+          media="(max-width:768px)"
+        />
+        <source
+          srcset="/src/assets/rwd/large-1600.jpg 1600w"
+          media="(max-width:1280px)"
+        />
+        <img src="/src/assets/rwd/normal-1920.jpg" alt="" />
+      </picture>
+    </div>
+
+    <div>
+      <!-- 화면 가로 세로 전환에 따른 이미지 변경 -->
+      <picture>
+        <source
+          srcset="/src/assets/logo/netflix@1x.webp"
+          media="(orientation: portrait)"
+        />
+        <img src="/src/assets/logo/css3.png" alt="" />
+      </picture>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video & source 요소</title>
+    <style>
+      video{
+        width: 70vw
+      }
+    </style>
+  </head>
+  <body>
+    <h1>video & source 요소</h1>
+    <div>
+      <video controls muted poster="/src/assets/video/poster.jpg">
+        <!-- 대부분의 mp4의 경우 modern brower 사용 가능 -->
+        <source
+          src="/src/assets/video/google-developer-stories.mp4"
+          type="video/mp4"
+        />
+        <!-- 자막파일 -->
+        <track src="/src/assets/video/stories-en.vtt" kind="captions" srclang="en" label="English Caption"></track>
+
+        <!-- 아래의 확장자는 사용 잘하지 않음 -->
+        <!-- <source
+          src="/src/assets/video/google-developer-stories.ogg"
+          type="video/ogg"
+        />
+        <source
+          src="/src/assets/video/google-developer-stories.mov"
+          type="video/mov"
+        />
+        <source
+          src="/src/assets/video/google-developer-stories.webm"
+          type="video/webm"
+        /> -->
+      </video>
+
+      <hr />
+
+      <!-- 여러 속성 추가의 경우 아래보단 video>source형식으로 추천 -->
+      <!-- autoplay 와 muted 속성 함께 쓰기 필수 -->
+      <!-- 미리보기 썸네일 = poster -->
+      <video
+        src="/src/assets/video/google-developer-stories.mp4"
+        controls
+        autoplay
+        muted
+        loop
+      ></video>
+    </div>
+  </body>
+</html>
