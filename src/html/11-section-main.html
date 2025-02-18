@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>섹션과 메인 요소</title>
+  </head>
+  <body>
+    <header class="header">본문 헤더</header>
+    <nav class="navigation">내비게이션</nav>
+    <main class="content">
+      <section class="card">
+        <header>섹션 헤더</header>
+        <p>...</p>
+        <footer>섹션 푸터</footer>
+      </section>
+      <article class="product">
+        <header>섹션 헤더</header>
+        <p>...</p>
+        <footer>섹션 푸터</footer>
+      </article>
+    </main>
+    <aside class="sidebar">부가 콘텐츠</aside>
+    <footer class="footer">본문 푸터</footer>
+
+    <!-- 
+    아래는 div로만 구성된 태그
+    본문헤더,푸터의 경우 role="banner, contentinfo"로 속성값을 줄 수 있으나
+    섹션헤더,푸터내에는 사용이 불가능하다
+    -->
+    <div class="div-style" style="border: 1px solid blue">
+      <div role="banner" class="header">본문 헤더</div>
+      <div role="navigation" class="navigation">내비게이션</div>
+      <div role="main" class="content">
+        <div role="article" class="card">
+          <div>섹션 헤더</div>
+          <p>...</p>
+          <div>섹션 푸터</div>
+        </div>
+        <div role="article" class="product">
+          <div>섹션 헤더</div>
+          <p>...</p>
+          <div>섹션 푸터</div>
+        </div>
+      </div>
+      <div role="complementary" class="sidebar">부가 콘텐츠</div>
+      <div role="contentinfo" class="footer">본문 푸터</div>
+    </div>
+  </body>
+</html>
