@@ -7,8 +7,7 @@
     <style>
       .floating-group {
         position: relative;
-        width: 100%;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .floating-input {
@@ -16,7 +15,7 @@
         border: 1px solid #ced4da;
         border-radius: 4px;
         outline: none;
-        font-size: 16px;
+        font-size: 14px;
         transition: border-color 0.3s ease-in-out;
         background-color: transparent;
       }
@@ -67,18 +66,21 @@
       </fieldset>
     </form>
 
-    <form action="/" method="post">
+    <form action="https://formspree.io/f/xwpvalpn" method="post">
       <!-- form의 속성
       - action
       - method
       -->
       <!-- input의 논리속성 
       - required
+      - maxlength, minlength
       - input으로 논리속성이 아닌 div로 input의 역할을 하게 하고 싶은 경우 aria-required=true와 같이 설정 필요
       -->
 
       <fieldset style="display: flex; flex-direction: column; gap: 0.5rem">
         <legend>폼 서식</legend>
+        
+        <!-- 이름 -->
         <div>
           <label for="userName">이름</label>
           <input
@@ -86,19 +88,12 @@
             name="userName"
             id="userName"
             placeholder="예시)박선영"
+            maxlength="5"
+            minlength="3"
             required
           />
         </div>
-        <div class="floating-group">
-          <input
-            type="text"
-            id="userID"
-            class="floating-input"
-            placeholder=""
-          />
-          <label for="userID">아이디를 입력해주세요</label>
-        </div>
-
+        <!-- 패스워드 -->
         <div>
           <label for="userPwd">패스워드</label>
           <input
@@ -109,18 +104,84 @@
             required
           />
         </div>
+        <!-- 검색 -->
         <div>
           <label for="likelionSearch">검색</label>
           <input type="search" name="likelionSearch" id="likelionSearch" />
         </div>
+        <!-- 이메일 -->
         <div>
           <label for="userEmail">이메일</label>
           <input type="email" name="userEmail" id="userEmail" required />
         </div>
+        <!-- 연락처 -->
+        <div>
+          <label for="userPhone">연락처</label>
+          <input type="phone" name="userPhone" id="userPhone" required />
+        </div>
 
+        <!-- input-checkbox/radio 의 경우 같은 name으로 grouping -->
+
+        <!-- Checkbox -->
+        <div style="display:flex;">
+          <div>
+            <input type="checkbox" name="classLikelion" id="classHtml"  value="html" checked/>
+            <label for="classHtml">HTML</label>
+          </div>
+          <div>
+            <input type="checkbox" name="classLikelion" id="classCss" value="css" />
+            <label for="classCss">Css</label>
+          </div>
+          <div>
+            <input type="checkbox" name="classLikelion" id="classJs" value="js" />
+            <label for="classJs">Js</label>
+          </div>
+        </div>
+
+        <!-- Radio -->
+        <div style="display:flex;">
+          <div>
+            <input type="radio" name="classLikelionTeam" id="team1" value="team1"/>
+            <label for="team1">회고1팀</label>
+          </div>
+          <div>
+            <input type="radio" name="classLikelionTeam" id="team2" value="team2" checked/>
+            <label for="team2">회고2팀</label>
+          </div>
+          <div>
+            <input type="radio" name="classLikelionTeam" id="team3" value="team3"/>
+            <label for="team3">회고3팀</label>
+          </div>
+        </div>
+
+        <!-- Submit Btn -->
         <div>
           <input type="submit" value="전송" />
           <!-- 자동 refresh -> action의 경로로 이동 -->
+        </div>
+      </fieldset>
+    </form>
+
+    <form action="">
+      <fieldset>
+        <legend>추가 폼</legend>
+        <div class="floating-group" style="margin-bottom: 0.5rem;">
+          <input
+            type="text"
+            id="userID"
+            class="floating-input"
+            placeholder=""
+          />
+          <label for="userID">아이디를 입력해주세요</label>
+        </div>
+        <div>
+          <input type="search" autofocus list="search-suggestions" />
+            <datalist id="search-suggestions">
+              <option label="mon" value="monday"></option>
+              <option label="tue" value="tuesday"></option>
+              <option label="wed" value="wednesday"></option>
+            </datalist>
+          </input>
         </div>
       </fieldset>
     </form>
