@@ -4,6 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>폼요소 & 인풋요소</title>
+    <style>
+      .floating-group {
+        position: relative;
+        width: 100%;
+        font-size: 16px;
+      }
+
+      .floating-input {
+        padding: 20px 12px 6px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        outline: none;
+        font-size: 16px;
+        transition: border-color 0.3s ease-in-out;
+        background-color: transparent;
+      }
+
+      .floating-group label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: #6c757d;
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        background-color: white;
+        padding: 0;
+      }
+
+      .floating-input:focus {
+        border-color: #007bff;
+      }
+
+      .floating-input:focus + label,
+      .floating-input:not(:placeholder-shown) + label {
+        top: 6px; /* 위로 이동 */
+        font-size: 12px;
+        color: #6c757d;
+        transform: none;
+      }
+    </style>
   </head>
   <body>
     <h1>form요소</h1>
@@ -25,20 +67,60 @@
       </fieldset>
     </form>
 
-    <form action="">
+    <form action="/" method="post">
+      <!-- form의 속성
+      - action
+      - method
+      -->
+      <!-- input의 논리속성 
+      - required
+      - input으로 논리속성이 아닌 div로 input의 역할을 하게 하고 싶은 경우 aria-required=true와 같이 설정 필요
+      -->
+
       <fieldset style="display: flex; flex-direction: column; gap: 0.5rem">
         <legend>폼 서식</legend>
         <div>
           <label for="userName">이름</label>
-          <input type="text" id="userName" />
+          <input
+            type="text"
+            name="userName"
+            id="userName"
+            placeholder="예시)박선영"
+            required
+          />
         </div>
+        <div class="floating-group">
+          <input
+            type="text"
+            id="userID"
+            class="floating-input"
+            placeholder=""
+          />
+          <label for="userID">아이디를 입력해주세요</label>
+        </div>
+
         <div>
           <label for="userPwd">패스워드</label>
-          <input type="password" id="userPwd" />
+          <input
+            type="password"
+            name="userPwd"
+            id="userPwd"
+            placeholder="8자리 이상"
+            required
+          />
         </div>
         <div>
           <label for="likelionSearch">검색</label>
-          <input type="search" id="likelionSearch" />
+          <input type="search" name="likelionSearch" id="likelionSearch" />
+        </div>
+        <div>
+          <label for="userEmail">이메일</label>
+          <input type="email" name="userEmail" id="userEmail" required />
+        </div>
+
+        <div>
+          <input type="submit" value="전송" />
+          <!-- 자동 refresh -> action의 경로로 이동 -->
         </div>
       </fieldset>
     </form>
