@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(253, 253, 214);
+  color: rgba(0, 0, 250, 1);
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  /* color가 이전까지 ,로 구분되었다면 이제는 공백으로 처리가능 */
+  color: rgb(0 250 250 /1);
+}
