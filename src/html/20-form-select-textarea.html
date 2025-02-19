@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 셀렉트 요소</title>
+  </head>
+  <body>
+    <h1>폼 셀렉트 요소</h1>
+    <h2>select</h2>
+    <form action="/" method="post">
+      <div>
+        <label for="petSelect"></label>
+        <select name="petSelect" id="petSelect">
+          <option value="">반려동물 선택</option>
+          <option value="dog">강아지</option>
+          <option value="cat">고양이</option>
+          <option value="hamster">햄스터</option>
+          <option value="spider">거미</option>
+          <option value="goldsfish">열대어</option>
+          <option value="parrot">패럿</option>
+        </select>
+      </div>
+      <div>
+        <!-- label을 안쓰고 싶은 경우 -> aria-label -->
+        <select aria-label="반려동물" name="petSelect" id="petSelect">
+          <option value="">반려동물 선택</option>
+          <option value="dog">강아지</option>
+          <option value="cat">고양이</option>
+          <option value="hamster">햄스터</option>
+          <option value="spider">거미</option>
+          <option value="goldsfish">열대어</option>
+          <option value="parrot">패럿</option>
+        </select>
+      </div>
+    </form>
+    <h2>textarea</h2>
+    <form action="/" method="post"></form>
+  </body>
+</html>
