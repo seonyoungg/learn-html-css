@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>폼 셀렉트 요소</title>
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
   </head>
   <body>
     <h1>폼 셀렉트 요소</h1>
@@ -35,6 +48,55 @@
       </div>
     </form>
     <h2>textarea</h2>
-    <form action="/" method="post"></form>
+    <form action="/" method="post">
+      <div>
+        <label for="content-title">제목</label>
+        <input
+          type="text"
+          id="content-title"
+          name="content-title"
+          placeholder="제목을 입력해주세요."
+        />
+      </div>
+      <div>
+        <label for="content-message">내용</label>
+        <textarea
+          placeholder="미리보기"
+          name="content-message"
+          id="content-message"
+          cols="50"
+          rows="20"
+        ></textarea>
+      </div>
+      <div>
+        <label for="content-title">
+          제목
+          <span aria-hidden="true">*</span>
+          <span class="sr-only">필수</span>
+        </label>
+        <input
+          type="text"
+          id="content-title"
+          name="content-title"
+          placeholder="제목을 입력해주세요."
+        />
+      </div>
+      <div>
+        <label for="content-message">
+          내용
+          <span aria-hidden="true">*</span>
+          <span class="sr-only">필수</span>
+        </label>
+        <textarea
+          placeholder="미리보기"
+          name="content-message"
+          id="content-message"
+          cols="50"
+          rows="10"
+        ></textarea>
+      </div>
+    </form>
   </body>
 </html>
+
+<!-- #dee2e6 선호하지않기.. -->
