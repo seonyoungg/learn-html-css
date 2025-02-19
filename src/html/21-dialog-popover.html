@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog요소, popover속성</title>
+    <style>
+      dialog.panel-dialog {
+        width: 300px;
+        height: 200px;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      dialog.panel-dialog::backdrop {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 182, 193, 0.5),
+          /* Light Pink */ rgba(173, 216, 230, 0.5),
+          /* Light Blue */ rgba(152, 251, 152, 0.5) /* Light Green */
+        );
+      }
+    </style>
+    <script type="module">
+      /***
+       * dialog 요소를 사용하여 모달창을 구현
+       * script의 위치에 따라 module type을 사용해야 함
+       * */
+
+      // DOM selection
+      const showDialogButton = document.querySelector('.show-dialog');
+      const closeDialogButton = document.querySelector('.close-dialog');
+      const panelDialog = document.querySelector('.panel-dialog');
+
+      // Function implementations
+      const openDialog = () => {
+        panelDialog.showModal();
+      };
+
+      const closeDialog = () => {
+        panelDialog.close();
+      };
+
+      // Event binding
+      showDialogButton.addEventListener('click', openDialog);
+      closeDialogButton.addEventListener('click', closeDialog);
+    </script>
+  </head>
+  <body>
+    <h1>dialog요소, popover속성</h1>
+
+    <!-- script필요 -->
+    <div>
+      <h2>Modal</h2>
+      <div class="dialog-area">
+        <button type="submit" class="show-dialog">모달창보기</button>
+        <dialog class="panel-dialog" aria-labelledby="event">
+          <!-- aria-label 과 aria-labelledby 구분해서 사용필요 -->
+          <h2 id="event">깜짝 혜택</h2>
+          <p>모달창 내용</p>
+          <button type="submit" class="close-dialog">닫기</button>
+        </dialog>
+      </div>
+    </div>
+
+    <!-- script필요하지 않음 -->
+    <div>
+      <h2>Popover</h2>
+      <button type="button" class="button-popover" popovertarget="popoverContent">팝오버보기</button>
+      <div popover id="popoverContent">
+        <p>팝오버 내용</p>
+      </div>
+    </div>
+  </body>
+</html
