@@ -1,0 +1,46 @@
+/* 루트요소 */
+/* clamp() 함수는 **최소값(min), 선호값(preferred), 최대값(max)**을 설정하여 동적으로 크기를 조정 */
+/* :root {
+  font-size: clamp(12px, 3vw, 24px);
+} */
+
+:root {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+body {
+  /* pretendard, suit 는 세부적으로 fontweight 제공 */
+  /* font-family: 'Pretendard Variable'; */
+  font-family: 'SUIT', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.size {
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  font-variant: small-caps;
+  font-family: 'pretendard variable', sans-serif;
+
+  /* 숏탠드로 하고 싶으면 폰트사이즈, 폰트종류 기입 필요요 */
+  /* font: bold italic small-caps 24px/1.5 'Pretendard Variable'; */
+}

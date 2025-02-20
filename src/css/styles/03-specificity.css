@@ -1,18 +1,63 @@
-body {
-  font-family:
-    "Pretendard Variable",
-    Pretendard,
-    -apple-system,
-    BlinkMacSystemFont,
-    system-ui,
-    Roboto,
-    "Helvetica Neue",
-    "Segoe UI",
-    "Apple SD Gothic Neo",
-    "Noto Sans KR",
-    "Malgun Gothic",
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    sans-serif;
+/* 
+*보단 이런식으로 해주는게 좋음 
+*/
+body * {
+  padding: 0;
+  margin: 0;
 }
+
+body {
+  font-family: 'Pretendard Variable', 'Pretendard';
+}
+
+body {
+  color: brown;
+  border: 1px solid darkblue;
+}
+
+a {
+  /* inherit 속성 사용 시 부모요소의 색상값 상속 */
+  color: inherit;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+/* 
+important와 id사용 지양
+*/
+.ai {
+  /* background-color: orange !important; */
+}
+
+body h2 + p {
+  /* background-color: yellow; */
+}
+
+body p[class] {
+  /* background-color: lime; */
+}
+
+#ai {
+  /* background-color: pink; */
+}
+
+/* 숏탠드(Shorthand Property) 
+CSS 속성을 한 줄로 축약해서 표현하는 방법을 의미
+*/
+.ai {
+  /* border-width: 1px;
+  border-style: dotted;
+  border-color: red; */
+  /* border: 1px dotted red; */
+}
+
+.ai.copilot {
+  /* border: 3px dotted blue; */
+}
+
+/* 상속되는 스타일과 상속되지 않는 스타일 
+   스타일관련된것은 상속된다고 보면 됨!
+*/

@@ -48,6 +48,7 @@ a[href$='pdf'] {
 }
 
 /* 가상 클래스 선택자*/
+/* : */
 /* 한번도 방문하지 않은 링크 */
 a:link {
   color: aqua;
@@ -71,6 +72,7 @@ a:active {
 }
 
 /* 가상 요소 선택자 */
+/* :: */
 h1::backdrop {
 }
 /* before/after 는 content사용 필수 */
