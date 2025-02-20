@@ -1,0 +1,71 @@
+body {
+  background-color: #ffc;
+}
+
+/* 태그 선택자 */
+p {
+  color: red;
+
+  &:hover {
+    background-color: #fff;
+  }
+
+  &:focus {
+    border: 1px solid black;
+  }
+  /* 
+  p 요소 focus 안됨 
+  tabindex속성 시 강제로 줄 순 있음
+  */
+}
+
+/* 클래스 선택자 */
+.like {
+  color: green;
+}
+
+/* 아이디 선택자 */
+#lion {
+  color: blue;
+}
+
+/* 속성 선택자 */
+[title] {
+  color: orange;
+}
+
+/* a[href^='https://']
+{
+} */
+
+a[href^='https'] {
+  text-decoration: none;
+}
+
+a[href$='pdf'] {
+  background-color: #222;
+  color: #fff;
+}
+
+/* 가상 클래스 선택자*/
+/* 한번도 방문하지 않은 링크 */
+a:link {
+  color: aqua;
+}
+/* 방문한 링크 */
+a:visited {
+  color: yellow;
+}
+
+a:hover {
+  color: gray;
+}
+
+/* 키보드이용자를 위한 focus 고려도 필요 */
+a:focus {
+  color: tomato;
+}
+
+a:active {
+  color: lawngreen;
+}

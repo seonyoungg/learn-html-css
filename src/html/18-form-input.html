@@ -79,7 +79,7 @@
 
       <fieldset style="display: flex; flex-direction: column; gap: 0.5rem">
         <legend>폼 서식</legend>
-        
+
         <!-- 이름 -->
         <div>
           <label for="userName">이름</label>
@@ -123,33 +123,65 @@
         <!-- input-checkbox/radio 의 경우 같은 name으로 grouping -->
 
         <!-- Checkbox -->
-        <div style="display:flex;">
+        <div style="display: flex">
           <div>
-            <input type="checkbox" name="classLikelion" id="classHtml"  value="html" checked/>
+            <input
+              type="checkbox"
+              name="classLikelion"
+              id="classHtml"
+              value="html"
+              checked
+            />
             <label for="classHtml">HTML</label>
           </div>
           <div>
-            <input type="checkbox" name="classLikelion" id="classCss" value="css" />
+            <input
+              type="checkbox"
+              name="classLikelion"
+              id="classCss"
+              value="css"
+            />
             <label for="classCss">Css</label>
           </div>
           <div>
-            <input type="checkbox" name="classLikelion" id="classJs" value="js" />
+            <input
+              type="checkbox"
+              name="classLikelion"
+              id="classJs"
+              value="js"
+            />
             <label for="classJs">Js</label>
           </div>
         </div>
 
         <!-- Radio -->
-        <div style="display:flex;">
+        <div style="display: flex">
           <div>
-            <input type="radio" name="classLikelionTeam" id="team1" value="team1"/>
+            <input
+              type="radio"
+              name="classLikelionTeam"
+              id="team1"
+              value="team1"
+            />
             <label for="team1">회고1팀</label>
           </div>
           <div>
-            <input type="radio" name="classLikelionTeam" id="team2" value="team2" checked/>
+            <input
+              type="radio"
+              name="classLikelionTeam"
+              id="team2"
+              value="team2"
+              checked
+            />
             <label for="team2">회고2팀</label>
           </div>
           <div>
-            <input type="radio" name="classLikelionTeam" id="team3" value="team3"/>
+            <input
+              type="radio"
+              name="classLikelionTeam"
+              id="team3"
+              value="team3"
+            />
             <label for="team3">회고3팀</label>
           </div>
         </div>
@@ -165,7 +197,7 @@
     <form action="">
       <fieldset>
         <legend>추가 폼</legend>
-        <div class="floating-group" style="margin-bottom: 0.5rem;">
+        <div class="floating-group" style="margin-bottom: 0.5rem">
           <input
             type="text"
             id="userID"
@@ -176,12 +208,11 @@
         </div>
         <div>
           <input type="search" autofocus list="search-suggestions" />
-            <datalist id="search-suggestions">
-              <option label="mon" value="monday"></option>
-              <option label="tue" value="tuesday"></option>
-              <option label="wed" value="wednesday"></option>
-            </datalist>
-          </input>
+          <datalist id="search-suggestions">
+            <option label="mon" value="monday"></option>
+            <option label="tue" value="tuesday"></option>
+            <option label="wed" value="wednesday"></option>
+          </datalist>
         </div>
       </fieldset>
     </form>

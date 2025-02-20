@@ -20,6 +20,14 @@ module.exports = {
   semi: true,
   // 싱글 인용 부호(') 사용 여부
   singleQuote: true,
+  overrides: [
+    {
+      files: '*.css',
+      options: {
+        singleQuote: false,
+      },
+    },
+  ],
   // 탭 너비 설정
   tabWidth: 2,
   // 객체 마지막 속성 선언 뒷 부분에 콤마 추가 여부
