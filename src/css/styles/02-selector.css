@@ -69,3 +69,16 @@ a:focus {
 a:active {
   color: lawngreen;
 }
+
+/* 가상 요소 선택자 */
+h1::backdrop {
+}
+/* before/after 는 content사용 필수 */
+
+h1::before {
+  content: '멋사';
+}
+
+h1::after {
+  content: '13기';
+}
