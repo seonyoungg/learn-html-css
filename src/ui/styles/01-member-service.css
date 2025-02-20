@@ -1,0 +1,65 @@
+body * {
+  padding: 0;
+  margin: 0;
+}
+
+div.member-service {
+  background-color: yellow;
+  /* 
+  두 종류의 접근방식이 있음 
+  - font-variant의 경우 : font-variant 속성은 글꼴 변형을 설정하는 CSS 속성
+                          이는 실제 대문자가 아니라 소문자를 축소하여 대문자처럼 보이게 만드는 기능
+  - text-transform : text-transform 속성은 대소문자 변환을 제어하는 속성
+    * none	변형 없음
+    * capitalize	각 단어의 첫 글자를 대문자로
+    * uppercase	모든 글자를 대문자로
+    * lowercase	모든 글자를 소문자로
+  */
+  font-variant: small-caps;
+  text-transform: capitalize;
+
+  & {
+    a {
+      text-decoration: none;
+      color: inherits;
+
+      &:hover {
+        color: aqua;
+      }
+      &:focus {
+        color: aqua;
+      }
+    }
+
+    /* a:not(:first-child)::before {
+      content: ':';
+    } */
+  }
+}
+
+.item::before {
+  content: '/';
+}
+
+.first::before {
+  content: '';
+}
+
+/*
+위의 nesting과 같음
+div.member-service > a {
+  text-decoration: none;
+  color: inherits;
+
+  &:hover {
+    color: aqua;
+  }
+  &:focus {
+    color: aqua;
+  }
+}
+
+div.member-service > a:not(:first-child)::before {
+  content: ':';
+} 
+*/
