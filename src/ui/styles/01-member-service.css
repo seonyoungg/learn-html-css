@@ -37,14 +37,6 @@ div.member-service {
   }
 }
 
-.item::before {
-  content: '/';
-}
-
-.first::before {
-  content: '';
-}
-
 /*
 위의 nesting과 같음
 div.member-service > a {

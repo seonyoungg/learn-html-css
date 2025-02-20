@@ -1,10 +1,5 @@
 /* 루트요소 */
-/* clamp() 함수는 **최소값(min), 선호값(preferred), 최대값(max)**을 설정하여 동적으로 크기를 조정 */
 /* :root {
-  font-size: clamp(12px, 3vw, 24px);
-} */
-
-:root {
   font-size: 16px;
 }
 
@@ -18,7 +13,12 @@
   :root {
     font-size: 12px;
   }
-}
+} */
+
+/* clamp() 함수는 **최소값(min), 선호값(preferred), 최대값(max)**을 설정하여 동적으로 크기를 조정 */
+/* :root {
+  font-size: clamp(12px, 3vw, 24px);
+} */
 
 body {
   /* pretendard, suit 는 세부적으로 fontweight 제공 */

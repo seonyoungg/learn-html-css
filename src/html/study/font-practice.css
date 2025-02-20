@@ -1,0 +1,46 @@
+/* 기본 스타일 설정 */
+:root {
+  font-size: 40px;
+}
+
+@media screen {
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 200px;
+}
+
+/* px 단위 */
+.px p {
+  color: blue;
+  font-size: 32px;
+}
+
+/* em{} */
+
+/* rem 단위 */
+.rem p {
+  font-size: 1rem;
+  color: red;
+}
+
+.box-item {
+  width: 10rem;
+  height: 2rem;
+  background-color: aqua;
+}
