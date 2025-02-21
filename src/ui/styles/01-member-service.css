@@ -4,7 +4,7 @@ body * {
 }
 
 div.member-service {
-  background-color: yellow;
+  /* background-color: yellow; */
   /* 
   두 종류의 접근방식이 있음 
   - font-variant의 경우 : font-variant 속성은 글꼴 변형을 설정하는 CSS 속성
@@ -15,10 +15,10 @@ div.member-service {
     * uppercase	모든 글자를 대문자로
     * lowercase	모든 글자를 소문자로
   */
-  font-variant: small-caps;
-  text-transform: capitalize;
+  /* font-variant: small-caps;
+  text-transform: capitalize; */
 
-  & {
+  /* & {
     a {
       text-decoration: none;
       color: inherits;
@@ -31,10 +31,10 @@ div.member-service {
       }
     }
 
-    /* a:not(:first-child)::before {
+    a:not(:first-child)::before {
       content: ':';
-    } */
-  }
+    }
+  } */
 }
 
 /*
@@ -55,3 +55,90 @@ div.member-service > a:not(:first-child)::before {
   content: ':';
 } 
 */
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+.member-service {
+  background-color: yellow;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-size: 0;
+}
+
+.item {
+  text-decoration: none;
+  color: inherit;
+  background-color: pink;
+  font-size: 0.875rem;
+  /* margin: 0 8px; */
+  /* font-size inherit으로 인한 상속개념을 준 이후 overriding */
+}
+
+.item::before {
+  content: ":";
+  padding: 0 16px;
+}
+.item.first::before {
+  content: "";
+}
+
+/* UL요소를 활용한 구조 */
+/* .member-link {
+  list-style: none;
+  font-size: 0;
+  background-color: aqua;
+  margin-top: 1rem;
+
+  li {
+    display: inline-block;
+
+    * {
+      font-size: 0.875rem;
+      display: inline-block;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 8px;
+      text-align: center;
+      background-color: yellow;
+    }
+
+    span {
+      margin: 0 8px;
+    }
+  }
+} */
+
+.member-link {
+  list-style: none;
+  font-size: 0;
+  background-color: aqua;
+  margin-top: 1rem;
+}
+
+.member-link li {
+  display: inline-block;
+}
+
+.member-link li * {
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+.member-link a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px;
+  text-align: center;
+  background-color: yellow;
+}
+
+.member-link span {
+  margin: 0 8px;
+}

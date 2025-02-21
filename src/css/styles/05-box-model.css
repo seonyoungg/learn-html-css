@@ -1,1 +1,79 @@
 /* CSS 박스모델 */
+
+/* 1. border 박스의 테두리 설정 */
+.like {
+  /* 정식속성은 아래와 같이 입력 */
+  /* border-top-width: .3125rem;
+  border-right-width: .625rem;
+  border-bottom-width: .4375rem;
+  border-left-width: .125rem; */
+
+  /* 숏탠드표기(top을 기준으로 시계방향) */
+  /* border-width: .3125rem .625rem .4375rem .125rem; */
+
+  /* 숏탠드표기(두께가같을경우)*/
+  /* border-width: .3125rem; */
+
+  /* 선의모양  */
+  /* border-style: solid;
+  border-color: green; */
+
+  /* 전체 숏탠드표기(두께가같을경우)*/
+  /* border: .625rem solid blue; */
+}
+
+.like {
+  /* 정식속성은 아래와 같이 입력 */
+  /* padding-top: .625rem;
+  padding-right: 20x;
+  padding-bottom: 1.875rem;
+  padding-left: 2.5rem; */
+
+  /* 숏탠드표기(top을 기준으로 시계방향) */
+  /* padding: .625rem 1.25rem 1.875rem 2.5rem; */
+
+  /* 숏탠드표기(박스내 모든 여백이 같을경우)*/
+  /* padding: 1.25rem; */
+
+  /* 숏탠드표기(위아래/좌우가 같을 경우)*/
+  /* padding: 1.25rem 2.5rem; */
+}
+
+.like {
+  border: 0.3125rem solid green;
+  padding: 1.25rem;
+  width: 9.375rem;
+  margin: 1.25rem;
+  div {
+    background-color: yellow;
+  }
+}
+
+/* lion은 span태그 => 인라인요소 */
+.lion {
+  /* display: inline-block; */
+  display: block;
+  border: 0.3125rem solid red;
+  padding: 0.625rem;
+  margin: 1.25rem auto;
+}
+
+.teacher {
+  width: 18.75rem;
+  margin-bottom: 3.125rem;
+  /* margin-inline: auto; */
+  margin-left: -50px;
+  /* padding 영역안으로 들어감 */
+}
+
+.bootcamp {
+  border: 1px dashed blue;
+  padding: 0 100px;
+}
+/* Margin(normal-flow) : 음수가능, auto가능, collapse 현상 
+   Margin(flex,grid-flow) 일 시 collase 현상X
+*/
+
+/* boxsizing : 기본속성 content-box 
+   boxsizing : border-box
+*/
