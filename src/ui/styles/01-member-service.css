@@ -87,7 +87,7 @@ body * {
 }
 
 /* UL요소를 활용한 구조 */
-/* .member-link {
+.member-link {
   list-style: none;
   font-size: 0;
   background-color: aqua;
@@ -113,7 +113,7 @@ body * {
       margin: 0 8px;
     }
   }
-} */
+}
 
 .member-link {
   list-style: none;
@@ -132,11 +132,14 @@ body * {
 }
 
 .member-link a {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 8px;
-  text-align: center;
-  background-color: yellow;
+  color: #000;
+
+  /* Label/Medium */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
 }
 
 .member-link span {
