@@ -1,5 +1,5 @@
 /* 상속여부와 초기값 설정이 가능함 
-    - 기본값은 가되, 추가적으로 변경하고 싶다면?*/
+    - 기본값은 가되, 추가적으로 일부만 변경하고 싶다면?*/
 @property --text-color {
   syntax: "<color>";
   inherits: false;
