@@ -16,20 +16,32 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
+    <!-- font : Suit -->
+    <link
+      rel="stylesheet"
+      as="styles"
+      href="<https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css>"
+    />
     <link rel="stylesheet" href="/src/ui/styles/02-notification.css" />
   </head>
   <body>
     <h1>알림(Notification)</h1>
+    <div class="notification">
+      <div class="notification-subject">{subject}</div>
+      <div class="notification-time">{min}분</div>
+      <div class="notification-content">{content}</div>
+    </div>
+
     <div class="notification green">
-      <div class="notification-subject">화초관리</div>
+      <div class="notification-subject">화초 관리</div>
       <div class="notification-time">6분</div>
       <div class="notification-content">화초에 물을 줄 시간입니다.</div>
     </div>
 
     <div class="notification brown">
-      <div class="notification-subject">화초관리</div>
-      <div class="notification-time">6분</div>
-      <div class="notification-content">화초에 물을 줄 시간입니다.</div>
+      <div class="notification-subject">아이 식사</div>
+      <div class="notification-time">지금</div>
+      <div class="notification-content">아이에게 식사를 차려줄 시간입니다.</div>
     </div>
   </body>
 </html>
