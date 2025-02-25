@@ -11,7 +11,7 @@ body {
   /* display: flow-root; */
 
   &.good-partner {
-    display: flow-root;
+    /* display: flow-root; */
   }
 
   /* background-color: pink; */
@@ -54,6 +54,12 @@ body {
       /* 부모와 동일 속성 적용 */
       /* border-radius: inherit; */
       border-radius: var(--radius);
+
+      /* 브라우저간 차이 없애려면추가
+      Chrome은 max-width만으로도 aspect-ratio를 적용
+      Firefox는 width가 명확하게 있어야 aspect-ratio 적용
+      */
+      width: 100%;
     }
   }
 
@@ -67,6 +73,9 @@ body {
 
       &[lang] {
         font-size: 0.5em;
+
+        position: relative;
+        top: 3px;
       }
     }
   }

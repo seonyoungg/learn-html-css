@@ -1,0 +1,52 @@
+body {
+  --font-color: #24388d;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-wrap {
+  padding: 14px 0;
+  display: flow-root;
+  background: red;
+
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+
+h1 {
+  color: var(--font-color);
+  font-weight: 900;
+  float: left;
+
+  background: yellow;
+
+  line-height: 1;
+  margin: 0;
+
+  /* line-height: 100px; */
+}
+
+.member-service {
+  color: var(--font-color);
+  background: aqua;
+  float: right;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  line-height: 1;
+  margin: 0;
+
+  /* line-height: 100px; */
+
+  a {
+    /* font-size: 2em; */
+  }
+}

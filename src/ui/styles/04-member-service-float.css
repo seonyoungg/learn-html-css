@@ -1,0 +1,71 @@
+body {
+  font-family: "SUIT", sans-serif;
+}
+
+body *,
+body *::before,
+body *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  /* color: #222; */
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/* 멤버 서비스 */
+.member-service {
+  background: yellow;
+  /* float: right; */
+  display: flow-root;
+
+  text-transform: uppercase;
+
+  a {
+    background: green;
+    float: left;
+
+    &:not(:last-child)::after {
+      content: "|";
+      margin: 0 8px;
+
+      pointer-events: none;
+    }
+  }
+}
+
+/* 멤버 링크 */
+.member-link {
+  background: pink;
+  text-transform: uppercase;
+  display: flow-root;
+
+  li {
+    background: skyblue;
+    float: left;
+
+    span {
+      background: yellow;
+      float: left;
+      margin: 0 8px;
+    }
+  }
+}
+
+body {
+  div {
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    margin-bottom: 0.25rem;
+  }
+}
