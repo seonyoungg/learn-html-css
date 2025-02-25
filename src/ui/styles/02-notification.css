@@ -91,3 +91,42 @@ h1 {
     margin-top: var(--spacing-20);
   }
 }
+
+.weather-box {
+  margin-top: 20px;
+
+  background:
+    url(/src/assets/svg/sunny.svg) no-repeat 100% 50%,
+    #fff;
+  box-shadow: 0px 4px 4px 0px rgba(181, 181, 181, 0.15);
+  padding: 8px 16px;
+  border: 1px solid #ebebea;
+  border-radius: 6px;
+
+  .title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #040404;
+  }
+  .subtitle {
+    margin-top: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    color: #6d7478;
+  }
+}
+
+.weather-box.moon {
+  margin-top: 20px;
+
+  background:
+    url(/src/assets/svg/moon.svg) no-repeat calc(100% - 8px) 50%,
+    #fff;
+
+  background-size: 32px 32px;
+
+  .title {
+    color: #01a9ff;
+  }
+}

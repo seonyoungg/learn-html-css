@@ -46,8 +46,8 @@ body {
 }
 
 .box {
-  width: 80vw;
-  height: 400px;
+  width: 600px;
+  height: 600px;
 
   /* 배경색상 */
   background-color: hsl(180, 50%, 80%);
@@ -57,10 +57,9 @@ body {
   background-repeat: no-repeat;
 
   /* background-position: 300px 300px; */
-
-  background-position: 50% 50%;
-  /* background-position: 40% 20%; */
-  /* background-position: center center; */
+  /* background-position: 50% 50%; */
+  /* background-position: 1em 1em; */
+  background-position: center center;
 
   /* 
   backgroun-position
