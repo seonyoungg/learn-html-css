@@ -1,0 +1,40 @@
+@import url(/src/common/modern-reset.css);
+
+body {
+  font-family: "SUIT";
+}
+
+.card {
+  background-color: pink;
+  margin: 2em;
+  padding: 2em;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+  /* border-radius 왼쪽상단기준으로 시계방향 */
+
+  /* 제목 */
+  .subject {
+    background-color: skyblue;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    span {
+      /* 기본 baseline */
+      /* vertical-align: baseline; */
+      vertical-align: top;
+
+      &[lang] {
+        font-size: 0.5em;
+      }
+    }
+  }
+}
+
+/* 이미지 */
+.thumbnail {
+  border: 1px solid blue;
+
+  img {
+    width: 100px;
+  }
+}
