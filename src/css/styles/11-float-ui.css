@@ -1,26 +1,68 @@
-@import url(/src/common/modern-reset.css);
+@import "/src/common/modern-reset.css";
 
 body {
-  font-family: "SUIT";
+  font-family: SUIT, sans-serif;
 }
 
 .card {
-  background-color: pink;
+  /* overflow: hidden; */
+  /* float: left; */
+  /* position: absolute; */
+  /* display: flow-root; */
+
+  &.good-partner {
+    display: flow-root;
+  }
+
+  /* background-color: pink; */
   margin: 2em;
   padding: 2em;
-  border: 1px solid red;
   border-radius: 0.5rem;
-  /* border-radius 왼쪽상단기준으로 시계방향 */
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 4px 0px rgba(181, 181, 181, 0.15);
+
+  /* 이미지 */
+  .thumbnail {
+    --radius: 50%;
+
+    border: 1px solid #ccc;
+    float: left;
+    margin: 1em;
+    padding: 0.625em;
+    background: #fff;
+    border: 1px solid #dee2e6;
+
+    /* border-radius: 50%; */
+    border-radius: var(--radius);
+
+    width: 120px;
+    height: auto;
+
+    /* 이미지 기준 바깥으로  동그라미 */
+    shape-outside: circle(50%);
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+
+      /* object의 시작(위치설정) */
+      object-position: 0 -20px;
+
+      /* aspect-ratio */
+      aspect-ratio: 1/1;
+
+      /* 부모와 동일 속성 적용 */
+      /* border-radius: inherit; */
+      border-radius: var(--radius);
+    }
+  }
 
   /* 제목 */
   .subject {
-    background-color: skyblue;
+    /* background-color: aqua; */
     font-size: 1.5rem;
     font-weight: 600;
-
     span {
-      /* 기본 baseline */
-      /* vertical-align: baseline; */
       vertical-align: top;
 
       &[lang] {
@@ -28,13 +70,13 @@ body {
       }
     }
   }
-}
 
-/* 이미지 */
-.thumbnail {
-  border: 1px solid blue;
-
-  img {
-    width: 100px;
+  /* 내용 */
+  .content {
+    margin-top: 0.625rem;
   }
+
+  /* &:hover {
+    border-radius: 50px 0 50px 0;
+  } */
 }
