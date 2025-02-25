@@ -50,31 +50,45 @@ body {
 }
 
 /* 추가적인 학습 */
+.box-container {
+  display: flow-root;
+  /* overflow: hidden; */
+}
+
 .box-wrap {
   border: 1px solid black;
+  background-color: pink;
+  padding: 1rem;
+  margin: 1rem 0;
+
+  /* overflow: hidden; */
+  display: flow-root;
 
   .box {
+    /* display: inline-block; */
     width: 100px;
     height: 100px;
   }
 
   .red {
     background-color: red;
-    float: left;
+    float: right;
+    /* width: 100%; */
   }
   .green {
     background-color: green;
     float: left;
+    clear: right;
   }
   .blue {
     background-color: blue;
     float: left;
-    /* clear: left; */
+    /* clear: both; */
   }
   .yellow {
     background-color: yellow;
     float: left;
-    /* clear: left; */
+    /* clear: both; */
   }
 }
 
@@ -97,8 +111,3 @@ body {
 /* .box-wrap {
   display: flow-root;
 } */
-
-.box-wrap {
-  float: left;
-  width: 100%;
-}

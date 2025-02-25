@@ -10,43 +10,69 @@ a {
 .content-wrap {
   padding: 14px 0;
   display: flow-root;
-  background: red;
-
-  position: relative;
+  background: skyblue;
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
+
+  /* position: relative; */
 }
 
 h1 {
   color: var(--font-color);
   font-weight: 900;
-  float: left;
 
   background: yellow;
 
   line-height: 1;
   margin: 0;
+  float: left;
 
   /* line-height: 100px; */
 }
 
 .member-service {
   color: var(--font-color);
-  background: aqua;
+  background: pink;
+
+  /* line-height: 2em; */
   float: right;
+  /* margin-left: auto; */
 
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  right: 0;
   transform: translateY(-50%);
-
-  line-height: 1;
-  margin: 0;
+  right: 0; */
 
   /* line-height: 100px; */
 
   a {
     /* font-size: 2em; */
   }
+}
+
+.word-wrap {
+  background-color: green;
+}
+
+p {
+  text-align: center;
+
+  span {
+    font-size: 0.5rem;
+    vertical-align: top;
+  }
+}
+
+.box-wrap {
+  padding: 1rem;
+  /* height: 200px; */
+  background-color: pink;
+  align-content: center;
+}
+
+.box-item {
+  width: 100px;
+  height: 100px;
+  background-color: #24388d;
 }
