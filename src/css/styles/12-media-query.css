@@ -1,2 +1,28 @@
 @import "/src/common/best-reset.css";
 @import "/src/common/a11y.css";
+
+/* 기본적으로 적용될 배경색 */
+body{
+  background-color: pink;
+}
+
+@media (min-width:600px) {
+  body{
+    background-color: aqua;
+  }
+}
+
+/* 가로보기모드 */
+@media (orientation : landscape){
+  body{
+    background-color: orange;
+  }
+}
+
+
+
+/* @media screen and (max-width:1000px){
+  body{
+  background-color: pink;
+  }
+} */
