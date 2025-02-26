@@ -1,47 +1,54 @@
 @import url(/src/common/modern-reset.css);
+@import "/src/common/a11y.css";
 
+/*=================================================
+        [CSS Variable]
+=================================================*/
 :root {
   --white: #fff;
   --green: #4cfe88;
   --gray: #dbdbdb;
 
-  --online: var(--green);
-  --offline: var(--gray);
+  --status-active: var(--green);
+  --status: var(--gray);
   --border-color: var(--white);
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
-
+/*=================================================
+        [CSS 스타일 초기화]
+=================================================*/
 button {
   padding: 0;
   margin: 0;
+  background: transparent;
   border: none;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.avatar-wrap {
+  background-color: yellow;
+  margin-bottom: 1rem;
 }
 
+/*=================================================
+        [Component : avavatar-item]
+=================================================*/
+/**##### 아바타아이템 #####**/
 .avatar-item {
   --size: 4rem;
+  --radius-circle: 50%;
 
-  width: var(--size);
-  /* height: var(--size); */
-  aspect-ratio: 1/1;
   position: relative;
+  width: var(--size);
+
+  img {
+    width: 100%;
+    /* height: var(--size); */
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-circle);
+  }
 }
 
+/**== 상태표시 ==**/
 .status {
   position: absolute;
   bottom: 0;
@@ -50,40 +57,46 @@ button {
 
   width: 16px;
   height: 16px;
-  background-color: var(--offline);
+  background-color: var(--status);
   border: 1px solid var(--border-color);
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
+
+  /** 온라인 **/
+  &.active {
+    background-color: var(--status-active);
+  }
 }
 
-.status.online {
-  background-color: var(--online);
-}
-
-/*
-버튼
- */
+/*=================================================
+        [Component : btn-avavatar-item]
+=================================================*/
+/**##### 아바타아이템 #####**/
 .btn-avatar-item {
+  position: relative;
   --size: 4rem;
 
-  width: var(--size);
-  /* height: var(--size); */
-  aspect-ratio: 1/1;
-  position: relative;
-}
+  img {
+    width: var(--size);
+    /* height: var(--size); */
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
 
-.btn-avatar-item::after {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  display: block;
-  content: "";
-  width: 16px;
-  height: 16px;
-  background-color: var(--offline);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-}
+  /**== 상태표시 ==**/
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: var(--status);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+  }
 
-.btn-avatar-item.online::after {
-  background-color: var(--online);
+  &.active::after {
+  background-color: var(--status-active);
+  }
 }
