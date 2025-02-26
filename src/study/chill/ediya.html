@@ -12,18 +12,45 @@
     <link rel="stylesheet" href="./ediya.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="logo-box">
-        <img src="/src/study/chill/ediya.svg" alt="이디야로고" />
+    <header class="header">
+      <div class="container">
+        <h1 class="logo-box">
+          <img src="/src/study/chill/img/ediya.svg" alt="이디야로고" />
+        </h1>
+        <ul>
+          <li><a href="#">이디야 디자인</a></li>
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#" class="active">이디야 음료</a></li>
+          <li><a href="#">이디야 뉴스</a></li>
+          <li><a href="#">매장찾기</a></li>
+        </ul>
+        <div class="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <ul>
-        <li><a href="#">이디야 디자인</a></li>
-        <li><a href="#">로그인</a></li>
-        <li><a href="#">회원가입</a></li>
-        <li><a href="#">이디야 음료</a></li>
-        <li><a href="#">이디야 뉴스</a></li>
-        <li><a href="#">매장찾기</a></li>
-      </ul>
-    </div>
+    </header>
+    <main class="drink-wrap">
+      <div class="container">
+        <figure class="drink-item">
+          <img src="./img/cherry-ice.png" alt="ICED 벚꽃라떼"/>
+          <figcaption class="drink-text">ICED 벚꽃라떼</figcaption>
+        </figure>
+        <figure class="drink-item">
+          <img src="./img/cherry-hot.png" alt="HOT 벚꽃라떼"/>
+          <figcaption class="drink-text">HOT 벚꽃라떼</figcaption>
+        </figure>
+        <figure class="drink-item">
+          <img src="./img/choco-ice.png" alt="ICED 브라우니 쇼콜라"/>
+          <figcaption class="drink-text">ICED 브라우니 쇼콜라</figcaption>
+        </figure>
+        <figure class="drink-item">
+          <img src="./img/choco-hot.png" alt="HOT 브라우니 쇼콜라"/>
+          <figcaption class="drink-text">HOT 브라우니 쇼콜라</figcaption>
+        </figure>
+      </div>
+    </main>
   </body>
 </html>
