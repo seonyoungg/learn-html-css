@@ -16,6 +16,7 @@ a {
 button{
   background: transparent;
   border: none;
+  padding: 0;
 }
 /*=================================================
         [CSS Variable]
@@ -23,6 +24,7 @@ button{
 :root {
   --primary-color: #24388d;
   --text-color:#0F0F0F;
+  --subtext-color:#616161;
   --border-color:#F5F5F5;
 
   --bg-color:#FEFEFE;
@@ -48,6 +50,7 @@ body{
 =================================================*/
 .header {
   position: fixed;
+  z-index: 2;
   top:0;
   left:0;
   width: 100%;
@@ -66,19 +69,26 @@ body{
   .container{
     display: flow-root;
     opacity: 1;
+    height: 100%;
   }
 
   .logo-box {
     float: left;
     width: 140px;
-    height: 14px;
+    height: 100%;
+
+    img{
+      height: 100%;
+    }
   }
+
   ul {
     float: right;
 
     li {
       float: left;
       list-style: none;
+      height: 100%;
 
       &:not(:last-child){
         margin-right: .5rem;
@@ -96,17 +106,50 @@ body{
   .mobile-menu{
     display: none;
     float: right;
+    width: 20px;
+    height: 100%;
 
     .menu-btn{
-      display: flex;
-      flex-direction: column;
-      gap:.25rem;
+      width: 100%;
+      height: 100%;
+      position: relative;
 
       span{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
         width: 20px;
         height: 2px;
         border-radius: 1px;
         background-color: var(--primary-color);
+        transition: all 0.3s;
+        
+        &:first-child{
+          top: calc( 50% - 8px);
+        }
+        
+        &:last-child{
+          top: calc( 50% + 8px);
+        }
+      }
+    }
+
+    .menu-btn.active{
+      span{
+        &:first-child{
+          top: 50%;
+          transform: rotate(45deg);
+        }
+        
+        &:last-child{
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+
+        &:nth-child(2){
+          opacity: 0;
+        }
       }
     }
     
@@ -146,15 +189,19 @@ ul {
   }
 
   .drink-item{
+    position: relative;
     width: 100%;
-    border: 1px solid #8f8f8f;
+    border: 1px solid #e6e6e6;
     padding: 20px 22px 45px 22px;
+    overflow: hidden;
     /* margin-bottom: 20px; */
     border-radius: 8px;
     background-color: var(--product-bg-color);
+    cursor: pointer;
 
     img{
       max-width: 100%;
+      height: 100%;
       aspect-ratio: 2/3;
       margin: 0 auto;
     }
@@ -165,6 +212,83 @@ ul {
       font-size: .875rem;
     }
 
+    .drink-info{
+      display: none;
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.60);
+      padding: 30px 20px;
+      cursor: initial;
+
+
+      .close-btn{
+        position: absolute;
+        top: 30px;
+        right: 20px;
+
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .info-title{
+        font-weight: 400;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--text-color);
+
+        .ko-title{
+          font-size: 1.125rem;
+          color: var(--text-color);
+          margin-bottom: .5rem;
+        }
+        .en-title{
+          font-size: .875rem;
+          color:var(--subtext-color);
+        }
+      }
+
+      .info-content{
+        font-size: 1rem;
+        color: var(--text-color);
+        line-height: 1.4;
+        word-break: keep-all;
+      }
+
+      .info-cal{
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        width: calc( 100% - 40px);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 13px;
+
+        p{
+          width: 100%;
+          padding: 2px 0;
+          white-space: nowrap;
+          
+          &:nth-child(2n-1){
+            border-right: 1px solid var(--text-color);
+          } 
+          &:nth-child(2n){
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+
+    &.active{
+      .drink-info{
+        display: block;
+      }
+    }
+
     /* @media (min-width:768px){
       width: calc((100% - 20px) / 2);
       float: left;
@@ -172,12 +296,14 @@ ul {
       &:nth-child(2n-1){
         margin-right: 20px;
       }
-    } */
+    }
 
-    /* @media (min-width:1024px){  
-      width: 25%; 
+    @media (min-width:1024px){  
+      width: calc((100% - 60px) / 4);
 
-      &:nth-child(2n-1){
+      margin-right: 20px;
+
+      &:nth-child(4n){
         margin-right: 0;
       }
     } */
@@ -188,17 +314,21 @@ ul {
   .container{
     display: grid;
     grid-template-columns: repeat(1, 1fr) ;
-    gap:1rem;
+    gap: 1rem;
 
     .drink-item{
       width: 100%;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 600px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 960px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1200px) {
       grid-template-columns: repeat(4, 1fr);
     }
   }
