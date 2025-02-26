@@ -6,6 +6,7 @@ body{
   background-color: pink;
 }
 
+/* 뷰포트 크기에 따라 적용될 배경 */
 @media (min-width:600px) {
   body{
     background-color: aqua;
