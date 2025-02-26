@@ -1,0 +1,44 @@
+@import url(/src/common/best-reset.css);
+@import "/src/common/theme.css";
+
+
+/* 반응형 레이아웃 */
+/* 헤더 */
+.header{
+  background-color: var(--pastel-coral);
+
+  height: 15vh;
+}
+/* 네비게이션 */
+.navigation{
+  background-color: var(--pastel-green);
+
+  height: 20vh;
+  
+}
+/* 메인컨텐츠 */
+.content{
+  background-color: var(--pastel-aqua);
+
+  height: 30vh;
+}
+/* 사이드바 */
+.sidebar{
+  background-color: var(--pastel-purple);
+
+  height: 20vh;
+}
+/* 푸터 */
+.footer{
+  background-color: var(--pastel-yellow);
+
+  height: 15vh;
+}
+
+@media (min-width:768px){
+
+}
+
+@media (min-width:1024px){
+
+}

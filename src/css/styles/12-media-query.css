@@ -4,6 +4,7 @@
 /* 기본적으로 적용될 배경색 */
 body{
   background-color: pink;
+  font-size: clamp(0.75rem, 2vw, 2rem);
 }
 
 /* 뷰포트 크기에 따라 적용될 배경 */
