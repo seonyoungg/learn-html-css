@@ -1,0 +1,89 @@
+@import url(/src/common/modern-reset.css);
+
+:root {
+  --white: #fff;
+  --green: #4cfe88;
+  --gray: #dbdbdb;
+
+  --online: var(--green);
+  --offline: var(--gray);
+  --border-color: var(--white);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.avatar-item {
+  --size: 4rem;
+
+  width: var(--size);
+  /* height: var(--size); */
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+
+  width: 16px;
+  height: 16px;
+  background-color: var(--offline);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.status.online {
+  background-color: var(--online);
+}
+
+/*
+버튼
+ */
+.btn-avatar-item {
+  --size: 4rem;
+
+  width: var(--size);
+  /* height: var(--size); */
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.btn-avatar-item::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--offline);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.btn-avatar-item.online::after {
+  background-color: var(--online);
+}
