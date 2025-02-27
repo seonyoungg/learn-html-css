@@ -28,120 +28,199 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
       type="image/x-icon"
     />
     <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link rel="stylesheet" href="/src/common/modern-reset.css" />
+    <link rel="stylesheet" href="/src/common/theme.css" />
     <style>
-      body {
-        font-family:
-          'Pretendard Variable',
-          Pretendard,
-          -apple-system,
-          BlinkMacSystemFont,
-          system-ui,
-          Roboto,
-          'Helvetica Neue',
-          'Segoe UI',
-          'Apple SD Gothic Neo',
-          'Noto Sans KR',
-          'Malgun Gothic',
-          'Apple Color Emoji',
-          'Segoe UI Emoji',
-          'Segoe UI Symbol',
-          sans-serif;
+      :root {
+        --white: #fff;
+        --text-color: #222;
+        --light-text-color: #a0a0a0;
+        --border-color: #dee2e6;
       }
+
+      body {
+        font-family: 'Pretendard Variable', sans-serif;
+        color: var(--text-color);
+      }
+
       a {
         text-decoration: none;
-        color: #222;
+        color: inherit;
+      }
+
+      .header {
+        padding: 2rem 1rem;
+        text-align: center;
+
+        p {
+          margin-top: 0.5rem;
+          color: var(--light-text-color);
+        }
+      }
+
+      .type-wrap {
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+
+        @media (min-width: 600px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 1100px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .type-lists {
+        background-color: var(--white);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        overflow: hidden;
+
+        h2 {
+          background-color: var(--pastel-gray);
+          padding: 1rem;
+        }
+
+        &.html {
+          h2 {
+            background-color: var(--pastel-pink);
+          }
+        }
+
+        &.css {
+          h2 {
+            background-color: var(--pastel-yellow);
+          }
+        }
+
+        &.ui {
+          h2 {
+            background-color: var(--pastel-green);
+          }
+        }
+
+        &.study {
+          h2 {
+            background-color: var(--pastel-blue);
+          }
+        }
+
+        ul {
+          padding: 1rem;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>HTML/CSS</h1>
-    <div class="type-html">
-      <h2>HTML 마크업</h2>
-      <ul>
-        <li><a href="/src/html/01-basic-structure.html">HTML 기본 구조</a></li>
-        <li><a href="/src/html/02-heading-paragraph.html">제목과 단락</a></li>
-        <li><a href="/src/html/03-image-figure.html">이미지와 피규어</a></li>
-        <li><a href="/src/html/04-anchor.html">하이퍼링크</a></li>
-        <li>
-          <a href="/src/html/05-unordered-ordered-list.html">
-            순서형, 비순서형 목록
-          </a>
-        </li>
-        <li><a href="/src/html/06-definition-list.html">정의형 목록</a></li>
-        <li><a href="/src/html/07-pharsing-element.html">프레이징 요소</a></li>
-        <li><a href="/src/html/08-blockquote-br.html">인용문과 줄바꿈</a></li>
-        <li><a href="/src/html/09-table.html">테이블</a></li>
-        <li><a href="/src/html/10-container-element.html">컨테이너 요소</a></li>
-        <li><a href="/src/html/11-section-main.html">섹션과 메인요소</a></li>
-        <li>
-          <a href="/src/html/12-text-level-element.html">텍스트 레벨 요소</a>
-        </li>
-        <li><a href="/src/html/13-address.html">address 요소</a></li>
-        <li>
-          <a href="/src/html/14-picture-source.html">picture, source요소</a>
-        </li>
-        <li>
-          <a href="/src/html/15-video-track.html">video & source 요소</a>
-        </li>
-        <li>
-          <a href="/src/html/16-iframe-object.html">iframe & object 요소</a>
-        </li>
-        <li><a href="/src/html/17-map-area.html">이미지 맵 요소</a></li>
-        <li><a href="/src/html/18-form-input.html">폼 요소</a></li>
-        <li><a href="/src/html/19-form-button.html">폼 버튼 요소</a></li>
-        <li><a href="/src//html/20-form-select-textarea.html">폼 셀렉트</a></li>
-        <li>
-          <a href="/src/html/21-dialog-popover.html">dialog요소, popover속성</a>
-        </li>
-        <li>
-          <a href="/src/html/22-details-summary.html">Detail-summary 요소</a>
-        </li>
-        <li><a href="/src/html/23-script.html">script 요소</a></li>
-      </ul>
-    </div>
-    <div class="type-css">
-      <h2>CSS 스타일</h2>
-      <ul>
-        <li><a href="/src/css/01-css-basic.html">CSS기초</a></li>
-        <li><a href="/src/css/02-selector.html">CSS-SELECTOR</a></li>
-        <li><a href="/src/css/03-specificity.html">상속, 겹침, 우선순위</a></li>
-        <li><a href="/src/css/04-typography.html">Font 관련 속성</a></li>
-        <li><a href="/src/css/05-box-model.html">박스 모델</a></li>
-        <li><a href="/src/css/06-reset.html">CSS RESET</a></li>
-        <li><a href="/src/css/07-nesting.html">Nesting</a></li>
-        <li><a href="/src/css/08-position.html">Position</a></li>
-        <li>
-          <a href="/src/css/09-custom-properties.html">CSS 변수</a>
-        </li>
-        <li><a href="/src/css/10-background.html">CSS 백그라운드</a></li>
-        <li><a href="/src/css/11-float.html">float</a></li>
-        <li><a href="/src/css/12-media-query.html">미디어쿼리</a></li>
-      </ul>
-    </div>
-    <div class="type-ui">
-      <h2>UI예제</h2>
-      <ul>
-        <li><a href="/src/ui/01-member-service.html">멤버 서비스 링크</a></li>
-        <li><a href="/src/ui/02-notification.html">알림(Notification)</a></li>
-        <li><a href="/src/ui/03-toast.html">토스트(toast)</a></li>
-        <li>
-          <a href="/src/ui/04-member-service-float.html"
-            >멤버 서비스 링크(float)</a
-          >
-        </li>
-        <li>
-          <a href="/src/ui/components/avatar/avatar.html">아바타컴포넌트</a>
-        </li>
-        <li><a href="/src/ui/05-avatar-list.html">아바타</a></li>
-        <li><a href="/src/ui/06-responsive-layout.html">레이아웃실습</a></li>
-      </ul>
-    </div>
-    <div class="type-study">
-      <h2>회고시간연습</h2>
-      <ul>
-        <li><a href="/src/study/chill/ediya.html">EDIYA</a></li>    
-        <li><a href="/src/study/chill/netflix.html">NETFLIX</a></li>          
-      </ul>
+    <header class="header">
+      <h1>📑HTML/CSS 학습정리공간</h1>
+      <p>by 선영</p>
+    </header>
+    <div class="type-wrap">
+      <div class="type-lists html">
+        <h2>HTML 마크업</h2>
+        <ul>
+          <li>
+            <a href="/src/html/01-basic-structure.html">HTML 기본 구조</a>
+          </li>
+          <li><a href="/src/html/02-heading-paragraph.html">제목과 단락</a></li>
+          <li><a href="/src/html/03-image-figure.html">이미지와 피규어</a></li>
+          <li><a href="/src/html/04-anchor.html">하이퍼링크</a></li>
+          <li>
+            <a href="/src/html/05-unordered-ordered-list.html">
+              순서형, 비순서형 목록
+            </a>
+          </li>
+          <li><a href="/src/html/06-definition-list.html">정의형 목록</a></li>
+          <li>
+            <a href="/src/html/07-pharsing-element.html">프레이징 요소</a>
+          </li>
+          <li><a href="/src/html/08-blockquote-br.html">인용문과 줄바꿈</a></li>
+          <li><a href="/src/html/09-table.html">테이블</a></li>
+          <li>
+            <a href="/src/html/10-container-element.html">컨테이너 요소</a>
+          </li>
+          <li><a href="/src/html/11-section-main.html">섹션과 메인요소</a></li>
+          <li>
+            <a href="/src/html/12-text-level-element.html">텍스트 레벨 요소</a>
+          </li>
+          <li><a href="/src/html/13-address.html">address 요소</a></li>
+          <li>
+            <a href="/src/html/14-picture-source.html">picture, source요소</a>
+          </li>
+          <li>
+            <a href="/src/html/15-video-track.html">video & source 요소</a>
+          </li>
+          <li>
+            <a href="/src/html/16-iframe-object.html">iframe & object 요소</a>
+          </li>
+          <li><a href="/src/html/17-map-area.html">이미지 맵 요소</a></li>
+          <li><a href="/src/html/18-form-input.html">폼 요소</a></li>
+          <li><a href="/src/html/19-form-button.html">폼 버튼 요소</a></li>
+          <li>
+            <a href="/src//html/20-form-select-textarea.html">폼 셀렉트</a>
+          </li>
+          <li>
+            <a href="/src/html/21-dialog-popover.html"
+              >dialog요소, popover속성</a
+            >
+          </li>
+          <li>
+            <a href="/src/html/22-details-summary.html">Detail-summary 요소</a>
+          </li>
+          <li><a href="/src/html/23-script.html">script 요소</a></li>
+        </ul>
+      </div>
+      <div class="type-lists css">
+        <h2>CSS 스타일</h2>
+        <ul>
+          <li><a href="/src/css/01-css-basic.html">CSS기초</a></li>
+          <li><a href="/src/css/02-selector.html">CSS-SELECTOR</a></li>
+          <li>
+            <a href="/src/css/03-specificity.html">상속, 겹침, 우선순위</a>
+          </li>
+          <li><a href="/src/css/04-typography.html">Font 관련 속성</a></li>
+          <li><a href="/src/css/05-box-model.html">박스 모델</a></li>
+          <li><a href="/src/css/06-reset.html">CSS RESET</a></li>
+          <li><a href="/src/css/07-nesting.html">Nesting</a></li>
+          <li><a href="/src/css/08-position.html">Position</a></li>
+          <li>
+            <a href="/src/css/09-custom-properties.html">CSS 변수</a>
+          </li>
+          <li><a href="/src/css/10-background.html">CSS 백그라운드</a></li>
+          <li><a href="/src/css/11-float.html">float</a></li>
+          <li><a href="/src/css/12-media-query.html">미디어쿼리</a></li>
+          <li><a href="/src/css/13-logical-properties.html">논리속성</a></li>
+        </ul>
+      </div>
+      <div class="type-lists ui">
+        <h2>UI예제</h2>
+        <ul>
+          <li><a href="/src/ui/01-member-service.html">멤버 서비스 링크</a></li>
+          <li><a href="/src/ui/02-notification.html">알림(Notification)</a></li>
+          <li><a href="/src/ui/03-toast.html">토스트(toast)</a></li>
+          <li>
+            <a href="/src/ui/04-member-service-float.html"
+              >멤버 서비스 링크(float)</a
+            >
+          </li>
+          <li>
+            <a href="/src/ui/components/avatar/avatar.html">아바타컴포넌트</a>
+          </li>
+          <li><a href="/src/ui/05-avatar-list.html">아바타</a></li>
+          <li><a href="/src/ui/06-responsive-layout.html">레이아웃실습</a></li>
+        </ul>
+      </div>
+      <div class="type-lists study">
+        <h2>회고시간연습</h2>
+        <ul>
+          <li><a href="/src/study/chill/ediya.html">EDIYA</a></li>
+          <li><a href="/src/study/chill/netflix.html">NETFLIX</a></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
