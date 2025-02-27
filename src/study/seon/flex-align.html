@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Examples</title>
+    <style>
+      .text-wrap {
+        padding: 0.5rem;
+        p {
+          font-size: 0.875rem;
+        }
+
+        ul {
+          list-style-type: disc;
+          padding: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
+
+      .flex-container {
+        display: flex;
+        width: 400px;
+        height: 200px;
+        border: 2px solid black;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+
+        &[class*='justify'] {
+          .box {
+            height: 50px;
+          }
+        }
+      }
+
+      .column .flex-container {
+        display: flex;
+        height: 300px;
+        flex-direction: column;
+
+        &[class*='justify'] {
+          .box {
+            height: auto;
+          }
+        }
+      }
+
+      .box {
+        padding: 1rem;
+        background-color: steelblue;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+      }
+
+      /* justify-content examples */
+      .justify-start {
+        justify-content: flex-start;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-end {
+        justify-content: flex-end;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .justify-around {
+        justify-content: space-around;
+      }
+      .justify-evenly {
+        justify-content: space-evenly;
+      }
+
+      /* align-items examples */
+      .align-start {
+        align-items: flex-start;
+      }
+      .align-center {
+        align-items: center;
+      }
+      .align-end {
+        align-items: flex-end;
+      }
+      .align-stretch {
+        align-items: stretch;
+      }
+      .align-baseline {
+        align-items: baseline;
+      }
+
+      /* align-content examples (works only with flex-wrap: wrap) */
+      .align-content-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 400px;
+        height: 300px;
+        border: 2px solid black;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+      }
+      .align-content-start {
+        align-content: flex-start;
+      }
+      .align-content-center {
+        align-content: center;
+      }
+      .align-content-end {
+        align-content: flex-end;
+      }
+      .align-content-between {
+        align-content: space-between;
+      }
+      .align-content-around {
+        align-content: space-around;
+      }
+      .align-content-evenly {
+        align-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-wrap">
+      <h2>display: flex</h2>
+      <ul>
+        <li>align-items는 수직축의 라인을 기준으로 아이템 정렬</li>
+        <li>
+          align-content는 수직축의 라인을 기준으로 (두 줄 이상 일 때만) 라인
+          자체가 정렬
+        </li>
+        <li>flex-direction: column (주축-세로/교차축-가로)</li>
+        <li>flex-direction: row (주축-가로/교차축-세로)</li>
+        <li>
+          stretch는 <b>교차축(cross axis)</b>을 기준으로 자식 요소의 크기를 늘림
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <h2>justify-content Examples</h2>
+      <h4>flex-start</h4>
+      <div class="flex-container justify-start">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>center</h4>
+      <div class="flex-container justify-center">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>flex-end</h4>
+      <div class="flex-container justify-end">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>space-between</h4>
+      <div class="flex-container justify-between">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>space-around</h4>
+      <div class="flex-container justify-around">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>space-evenly</h4>
+      <div class="flex-container justify-evenly">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h2>align-items Examples</h2>
+      <h4>flex-start</h4>
+      <div class="flex-container align-start">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>center</h4>
+      <div class="flex-container align-center">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>flex-end</h4>
+      <div class="flex-container align-end">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>stretch</h4>
+      <div class="flex-container align-stretch">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+      <h4>baseline</h4>
+      <div class="flex-container align-baseline">
+        <div class="box" style="font-size: 20px">1</div>
+        <div class="box" style="font-size: 30px">2</div>
+        <div class="box" style="font-size: 25px">3</div>
+      </div>
+      <h2>align-content & align-items Interaction</h2>
+      <h4>align-items: center & align-content: space-between</h4>
+      <div class="align-content-container align-content-between align-center">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+      </div>
+      <h4>align-items: center & align-content: space-around</h4>
+      <div class="align-content-container align-content-around align-center">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+      </div>
+      <h4>align-items: center & align-content: center</h4>
+      <div class="align-content-container align-content-center align-center">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,9 @@
 @import url(/src/common/theme.css);
 
+html,
+body {
+  font-family: "SUIT", sans-serif;
+}
 body *,
 body *::before,
 body *::after {
@@ -8,31 +12,102 @@ body *::after {
 
 /* flex-box */
 .case-01 {
-  display: flex;
+  display: none;
+  /* display: flex; */
 
   /* 아래코드의 숏핸드화 */
   /* flex-direction: row;
   flex-wrap: nowrap; */
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 
-  border: 1px solid #222;
-  padding: 1rem;
-  inline-size: 400px;
+  border: 1px solid red;
+  padding: 10px;
+  inline-size: 622px;
+  block-size: 722px;
+  justify-content: flex-start;
+
+  /* align-items: center; */
+  /* 아래의 코드와 align-items:center 는 다름 */
+  /* align-items: baseline;
+  align-content: center; */
+
+  /* align-items: center;
+  align-content: start; */
+
+  align-items: center;
+  align-content: end;
+
+  /* align-content는 두줄부터 사용하는데 의미가 있음! */
 
   [class*="item"] {
-    background-color: var(--pastel-yellow);
-    inline-size: 100px;
-    block-size: 100px;
-    text-align: center;
-    align-content: center;
+    margin-block: 10px;
     border: 1px solid currentColor;
+    background: var(--pastel-yellow);
+    /* inline-size: 100px;
+    block-size: 100px; */
+    text-align: center;
+
+    align-content: center;
+    /* 기존에 세로 기준 가운데 정렬을 지원하지 않을 때 사용하던 트릭 */
+    /* line-height: 100px; */
   }
 
   .item1 {
-    inline-size: 200px;
+    /* inline-size: 200px; */
+    font-size: 2rem;
   }
 
-  .iten2 {
-    /* inline-size: 300px; */
+  .item2 {
+    font-size: 3rem;
   }
 }
+
+/* 플렉스아이템관련속성 */
+.case-02 {
+  border: 1px solid yellowgreen;
+  width: 500px;
+  inline-size: 600px;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  [class^="item"] {
+    border: 1px solid currentColor;
+    /* width: 100px;
+    inline-size: 100px;
+    block-size: 100px; */
+    text-align: center;
+    align-content: center;
+
+    /* 25%로 계산됨 */
+    /* flex-basis: 0;
+    flex-grow: 1; */
+
+    /* 이건 각요소 안의 여백을 동일하게 가져오며 fill로 채움 */
+    /* flex-basis: auto;
+    flex-grow: 1; */
+    /* grow default =  0*/
+
+    /* width: 200px;
+    flex-shrink: 1; */
+    /* shirink deault = 1 */
+
+    /* flexgrow shirink basis */
+    flex: 0 1 auto;
+
+    /* even과 odd */
+    &:nth-child(odd) {
+      order: -1;
+    }
+  }
+}
+
+/* 
+flex-grow: 아이템이 부모 컨테이너의 남은 공간을 얼마나 차지할지를 결정합니다. 기본값은 0으로, 1이면 공간을 동일하게 나누어 갖고, 그 이상으로 설정하면 더 많은 공간을 차지하게 됩니다.
+flex-shrink: 아이템이 부모 컨테이너의 공간이 부족할 때 얼마나 축소할지를 결정합니다. 기본값은 1이며, 0이면 축소되지 않습니다. 값이 크면 더 많이 축소됩니다.
+flex-basis: 아이템의 기본 크기를 설정합니다. 기본값은 auto로, 이 경우 아이템의 본래 크기가 사용됩니다. 픽셀 값이나 비율로 설정할 수도 있습니다. */
+
+/* .item2,
+  .item4 {
+    order: -1;
+  } */

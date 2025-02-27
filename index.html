@@ -85,14 +85,6 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
           padding: 1rem;
         }
 
-        li {
-          &::before {
-            width: 1rem;
-            height: 1rem;
-            margin-right: 0.5rem;
-          }
-        }
-
         &.html {
           h3 {
             background-color: var(--pastel-pink);
@@ -143,11 +135,35 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
 
         ul {
           padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          gap: 0.375rem;
           max-height: 300px;
           overflow: auto;
+          font-size: 0;
+
+          li {
+            display: flex;
+            position: relative;
+
+            &::before {
+              font-size: 1rem;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+            }
+          }
+
+          a {
+            font-size: 0.9rem;
+            display: block;
+            width: 100%;
+            border-radius: 0.5rem;
+            line-height: 2;
+            padding-left: 1.75rem;
+
+            &:hover {
+              background-color: #ececec;
+            }
+          }
 
           @media (min-width: 600px) {
             max-height: 400px;
@@ -192,7 +208,7 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
           <li><a href="/src/html/04-anchor.html">하이퍼링크</a></li>
           <li>
             <a href="/src/html/05-unordered-ordered-list.html">
-              순서형, 비순서형 목록
+              순서형&비순서형 목록
             </a>
           </li>
           <li><a href="/src/html/06-definition-list.html">정의형 목록</a></li>
@@ -210,13 +226,13 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
           </li>
           <li><a href="/src/html/13-address.html">address 요소</a></li>
           <li>
-            <a href="/src/html/14-picture-source.html">picture, source요소</a>
+            <a href="/src/html/14-picture-source.html">picture-source 요소</a>
           </li>
           <li>
-            <a href="/src/html/15-video-track.html">video & source 요소</a>
+            <a href="/src/html/15-video-track.html">video-source 요소</a>
           </li>
           <li>
-            <a href="/src/html/16-iframe-object.html">iframe & object 요소</a>
+            <a href="/src/html/16-iframe-object.html">iframe-object 요소</a>
           </li>
           <li><a href="/src/html/17-map-area.html">이미지 맵 요소</a></li>
           <li><a href="/src/html/18-form-input.html">폼 요소</a></li>
@@ -226,11 +242,11 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
           </li>
           <li>
             <a href="/src/html/21-dialog-popover.html"
-              >dialog요소, popover속성</a
+              >dialog 요소와 popover속성</a
             >
           </li>
           <li>
-            <a href="/src/html/22-details-summary.html">Detail-summary 요소</a>
+            <a href="/src/html/22-details-summary.html">detail-summary 요소</a>
           </li>
           <li><a href="/src/html/23-script.html">script 요소</a></li>
         </ul>
@@ -238,24 +254,27 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
       <div class="type-lists css">
         <h3>CSS 스타일</h3>
         <ul>
-          <li><a href="/src/css/01-css-basic.html">CSS기초</a></li>
-          <li><a href="/src/css/02-selector.html">CSS-SELECTOR</a></li>
+          <li><a href="/src/css/01-css-basic.html">CSS 기초</a></li>
+          <li><a href="/src/css/02-selector.html">CSS Selector</a></li>
           <li>
             <a href="/src/css/03-specificity.html">상속, 겹침, 우선순위</a>
           </li>
           <li><a href="/src/css/04-typography.html">Font 관련 속성</a></li>
           <li><a href="/src/css/05-box-model.html">박스 모델</a></li>
-          <li><a href="/src/css/06-reset.html">CSS RESET</a></li>
+          <li><a href="/src/css/06-reset.html">CSS Reset</a></li>
           <li><a href="/src/css/07-nesting.html">Nesting</a></li>
           <li><a href="/src/css/08-position.html">Position</a></li>
           <li>
             <a href="/src/css/09-custom-properties.html">CSS 변수</a>
           </li>
-          <li><a href="/src/css/10-background.html">CSS 백그라운드</a></li>
-          <li><a href="/src/css/11-float.html">float</a></li>
+          <li><a href="/src/css/10-background.html">CSS Background</a></li>
+          <li><a href="/src/css/11-float.html">Float</a></li>
           <li><a href="/src/css/12-media-query.html">미디어쿼리</a></li>
           <li><a href="/src/css/13-logical-properties.html">논리속성</a></li>
-          <li><a href="/src/css/14-flexbox.html">플렉스 박스</a></li>
+          <li><a href="/src/css/14-flexbox.html">Display : flex</a></li>
+          <li>
+            <a href="/src/study/seon/flex-align.html">플렉스 예제 추가</a>
+          </li>
         </ul>
       </div>
       <div class="type-lists ui">
@@ -263,21 +282,25 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
         <ul>
           <li><a href="/src/ui/01-member-service.html">멤버 서비스 링크</a></li>
           <li><a href="/src/ui/02-notification.html">알림(Notification)</a></li>
-          <li><a href="/src/ui/03-toast.html">토스트(toast)</a></li>
+          <li><a href="/src/ui/03-toast.html">토스트(Toast)</a></li>
           <li>
             <a href="/src/ui/04-member-service-float.html"
-              >멤버 서비스 링크(float)</a
+              >멤버 서비스 링크(Float ver)</a
             >
           </li>
           <li>
-            <a href="/src/ui/components/avatar/avatar.html">아바타컴포넌트</a>
+            <a href="/src/ui/components/avatar/avatar.html">아바타 컴포넌트</a>
           </li>
           <li><a href="/src/ui/05-avatar-list.html">아바타</a></li>
-          <li><a href="/src/ui/06-responsive-layout.html">레이아웃실습</a></li>
+          <li>
+            <a href="/src/ui/06-responsive-layout.html"
+              >미디어쿼리 레이아웃 실습</a
+            >
+          </li>
         </ul>
       </div>
       <div class="type-lists study">
-        <h3>연습</h3>
+        <h3>개인연습</h3>
         <ul>
           <li><a href="/src/study/chill/ediya.html">EDIYA</a></li>
           <li><a href="/src/study/chill/netflix.html">NETFLIX</a></li>
