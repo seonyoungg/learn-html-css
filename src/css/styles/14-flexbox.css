@@ -1,0 +1,38 @@
+@import url(/src/common/theme.css);
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+/* flex-box */
+.case-01 {
+  display: flex;
+
+  /* 아래코드의 숏핸드화 */
+  /* flex-direction: row;
+  flex-wrap: nowrap; */
+  flex-flow: row nowrap;
+
+  border: 1px solid #222;
+  padding: 1rem;
+  inline-size: 400px;
+
+  [class*="item"] {
+    background-color: var(--pastel-yellow);
+    inline-size: 100px;
+    block-size: 100px;
+    text-align: center;
+    align-content: center;
+    border: 1px solid currentColor;
+  }
+
+  .item1 {
+    inline-size: 200px;
+  }
+
+  .iten2 {
+    /* inline-size: 300px; */
+  }
+}

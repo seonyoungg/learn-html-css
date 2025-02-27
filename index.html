@@ -59,7 +59,8 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
       }
 
       .type-wrap {
-        padding: 0 1rem;
+        padding: 2rem 1rem;
+        padding-top: 0;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
@@ -79,49 +80,109 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
         border-radius: 1rem;
         overflow: hidden;
 
-        h2 {
+        h3 {
           background-color: var(--pastel-gray);
           padding: 1rem;
         }
 
+        li {
+          &::before {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+          }
+        }
+
         &.html {
-          h2 {
+          h3 {
             background-color: var(--pastel-pink);
+          }
+
+          li {
+            &::before {
+              content: '🎨';
+            }
           }
         }
 
         &.css {
-          h2 {
+          h3 {
             background-color: var(--pastel-yellow);
+          }
+
+          li {
+            &::before {
+              content: '🧸';
+            }
           }
         }
 
         &.ui {
-          h2 {
+          h3 {
             background-color: var(--pastel-green);
+          }
+
+          li {
+            &::before {
+              content: '🌱';
+            }
           }
         }
 
         &.study {
-          h2 {
+          h3 {
             background-color: var(--pastel-blue);
+          }
+
+          li {
+            &::before {
+              content: '🐬';
+            }
           }
         }
 
         ul {
           padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.375rem;
+          max-height: 300px;
+          overflow: auto;
+
+          @media (min-width: 600px) {
+            max-height: 400px;
+          }
+
+          @media (min-width: 1100px) {
+            max-height: none;
+          }
+
+          &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            background: transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgba(150, 150, 150, 0.2); /* 스크롤 색상 */
+            border-radius: 1rem;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: transparent; /* 트랙 배경 투명 */
+          }
         }
       }
     </style>
   </head>
   <body>
     <header class="header">
-      <h1>📑HTML/CSS 학습정리공간</h1>
+      <h2>📑HTML/CSS 학습정리공간</h2>
       <p>by 선영</p>
     </header>
     <div class="type-wrap">
       <div class="type-lists html">
-        <h2>HTML 마크업</h2>
+        <h3>HTML 마크업</h3>
         <ul>
           <li>
             <a href="/src/html/01-basic-structure.html">HTML 기본 구조</a>
@@ -175,7 +236,7 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
         </ul>
       </div>
       <div class="type-lists css">
-        <h2>CSS 스타일</h2>
+        <h3>CSS 스타일</h3>
         <ul>
           <li><a href="/src/css/01-css-basic.html">CSS기초</a></li>
           <li><a href="/src/css/02-selector.html">CSS-SELECTOR</a></li>
@@ -194,10 +255,11 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
           <li><a href="/src/css/11-float.html">float</a></li>
           <li><a href="/src/css/12-media-query.html">미디어쿼리</a></li>
           <li><a href="/src/css/13-logical-properties.html">논리속성</a></li>
+          <li><a href="/src/css/14-flexbox.html">플렉스 박스</a></li>
         </ul>
       </div>
       <div class="type-lists ui">
-        <h2>UI예제</h2>
+        <h3>UI 예제</h3>
         <ul>
           <li><a href="/src/ui/01-member-service.html">멤버 서비스 링크</a></li>
           <li><a href="/src/ui/02-notification.html">알림(Notification)</a></li>
@@ -215,7 +277,7 @@ ex) 현재 나의 위치 learn-html-css/index.html로 가정한다면
         </ul>
       </div>
       <div class="type-lists study">
-        <h2>회고시간연습</h2>
+        <h3>연습</h3>
         <ul>
           <li><a href="/src/study/chill/ediya.html">EDIYA</a></li>
           <li><a href="/src/study/chill/netflix.html">NETFLIX</a></li>
