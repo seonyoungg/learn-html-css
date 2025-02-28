@@ -55,15 +55,15 @@ h1 {
     text-align: center;
     align-content: center;
     background: var(--pastel-lavender);
-    /* transition-property: background, border-radius;
+    transition-property: background, border-radius;
     transition-duration: 2s, 1s;
     transition-delay: 0s, 2s;
-    transition-timing-function: ease; */
+    transition-timing-function: ease;
     /* transition 관련 단축 속성 */
     /* transition: 
               background 2s 0s ease, 
               border-raius 1s 2s ease; */
-    transition: all 200ms;
+    /* transition: all 200ms; */
 
     &:hover {
       background: var(--pastel-orange);

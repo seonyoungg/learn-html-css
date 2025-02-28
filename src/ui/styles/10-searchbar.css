@@ -1,0 +1,71 @@
+@import "/src/common/theme.css";
+@import "/src/common/base.css";
+@import "/src/common/best-reset.css";
+@import "/src/common/a11y.css";
+.component-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+body {
+  padding: 1rem;
+}
+
+/*=================================================
+        [Component] 원자단위
+=================================================*/
+/* 로고 컴포넌트*/
+.brand {
+  /* background-color: yellow; */
+
+  .logo {
+    /* background: pink; */
+    display: block;
+  }
+}
+
+/* 버튼(Circle)  컴포넌트 */
+.button-circle {
+  position: relative;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: #23e97f linear-gradient(180deg, #23e97f 0%, #00dcc9 100%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    border-radius: 50%;
+    background: #fff;
+  }
+}
+
+/* 검색폼 컴포넌트 */
+.input {
+  background: yellow;
+
+  input {
+    inline-size: 100%;
+    block-size: 1.5rem;
+    border: 1px solid var(--pastel-gray);
+    font-size: 0.875rem;
+    padding: 0.125rem 0.5rem;
+  }
+}
+
+/*=================================================
+        [Component] 분자단위
+=================================================*/
+.form-search {
+  .search-wrap {
+    background: pink;
+    display: flex;
+  }
+}
