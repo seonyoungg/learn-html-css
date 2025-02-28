@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>아바타 컴포넌트</title>
     <link
       rel="shortcut icon"
       href="/src/assets/favicon/likelion.ico"
@@ -11,58 +11,38 @@
     />
     <link rel="icon" href="/src/assets/favicon/likelion.svg" />
     <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+      rel="preload"
+      as="font"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2"
     />
     <link
       rel="stylesheet"
-      as="style"
       href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css"
     />
     <link rel="stylesheet" href="/src/ui/components/avatar/avatar.css" />
   </head>
   <body>
     <h1>아바타 컴포넌트</h1>
-    <div class="avatar-wrap">
-      <h4>인터렉션이 없는 아바타 컴포넌트</h4>
-      <figure class="avatar-item">
-        <img
-          src="/src/assets/face/face1.jpg"
-          alt="사용자명"
-          width="64px"
-          height="64px"
-        />
-        <figcaption class="status">
-          <span class="sr-only">오프라인</span>
-        </figcaption>
-      </figure>
-      <figure class="avatar-item">
-        <img
-          src="/src/assets/face/face2.jpg"
-          alt="사용자명"
-          width="64px"
-          height="64px"
-        />
-        <figcaption class="status active">
-          <span class="sr-only">온라인</span>
-        </figcaption>
-      </figure>
-    </div>
+    <h2>인터렉션이 없는 아바타 컴포넌트</h2>
+    <figure class="img-avatar">
+      <img src="/src/assets/face/face1.jpg" alt="사용자명" />
+      <figcaption class="state">
+        <span class="sr-only">오프라인</span>
+      </figcaption>
+    </figure>
+    <figure class="img-avatar">
+      <img src="/src/assets/face/face1.jpg" alt="사용자명" />
+      <figcaption class="state is-active">
+        <span class="sr-only">온라인</span>
+      </figcaption>
+    </figure>
 
-    <div class="avatar-wrap">
-      <h4>인터렉션이 있는 아바타 컴포넌트</h4>
-      <button type="button" class="btn-avatar-item active" aria-label="온라인">
-        <img src="/src/assets/face/face3.jpg" alt="사용자명" />
-      </button>
-      <button
-        type="button"
-        class="btn-avatar-item"
-        aria-label="오프라인"
-      >
-        <img src="/src/assets/face/face4.jpg" alt="사용자명" />
-      </button>
-    </div>
+    <h2>인터렉션이 있는 아바타 컴포넌트</h2>
+    <button type="button" class="button-avatar" aria-label="오프라인">
+      <img src="/src/assets/face/face1.jpg" alt="사용자명" />
+    </button>
+    <button type="button" class="button-avatar is-active" aria-label="온라인">
+      <img src="/src/assets/face/face1.jpg" alt="사용자명" />
+    </button>
   </body>
 </html>
