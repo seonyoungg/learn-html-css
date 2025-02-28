@@ -56,16 +56,59 @@ body {
     block-size: 1.5rem;
     border: 1px solid var(--pastel-gray);
     font-size: 0.875rem;
+    font-weight: 700;
     padding: 0.125rem 0.5rem;
+
+    &:placeholder-shown {
+      color: #bcc3c7;
+    }
   }
 }
 
 /*=================================================
         [Component] 분자단위
 =================================================*/
+/* 검색폼 */
 .form-search {
   .search-wrap {
-    background: pink;
+    /* background: pink; */
     display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    .input {
+      flex: 1 0 0;
+    }
+  }
+}
+
+/* 검색바 */
+.searchbar {
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  background: #fff;
+  border: 1px solid #03cc5c;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.75rem;
+
+  .form-search {
+    flex: 1 0 0;
+  }
+
+  input {
+    border: 0;
+
+    /* focus시 어떤 서식이 선택되었는지 
+      시각적으로 구분할 수 있는 대안이 있는 경우 outline을 제거해도 됨 
+      => 아닌 경우 지우지말 것*/
+    &:focus {
+      outline: none;
+    }
+  }
+
+  /* :focus-within */
+  &:focus-within {
+    box-shadow: 0px 4px 4px 0px rgba(68, 131, 63, 0.15);
   }
 }
