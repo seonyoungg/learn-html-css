@@ -1,5 +1,5 @@
 @import url(/src/common/modern-reset.css);
-@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 
 /*=================================================
         [CSS 스타일 초기화]
@@ -13,7 +13,7 @@ a {
   color: inherit;
 }
 
-button{
+button {
   background: transparent;
   border: none;
   padding: 0;
@@ -23,26 +23,26 @@ button{
 =================================================*/
 :root {
   --primary-color: #24388d;
-  --text-color:#0F0F0F;
-  --subtext-color:#616161;
-  --border-color:#F5F5F5;
+  --text-color: #0f0f0f;
+  --subtext-color: #616161;
+  --border-color: #f5f5f5;
 
-  --bg-color:#FEFEFE;
-  --bg-color-opacity:#FEFEFE08;
+  --bg-color: #fefefe;
+  --bg-color-opacity: #fefefe08;
   --default-bg-color: #fff;
-  --product-bg-color: #F5F5F5;
+  --product-bg-color: #f5f5f5;
 }
 
-.container{
+.container {
   margin: 0 auto;
   max-width: 1440px;
 
-  @media (max-width:1440px) {
+  @media (max-width: 1440px) {
     padding: 0 10px;
   }
 }
 
-body{
+body {
   background-color: var(--bg-color);
 }
 /*=================================================
@@ -51,22 +51,22 @@ body{
 .header {
   position: fixed;
   z-index: 2;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 50px;
 
   padding: 14px 0;
   color: var(--primary-color);
 
-  background-color: rgba(254,254,254,0.7);
+  background-color: rgba(254, 254, 254, 0.7);
   /* background-color: var(--bg-color-opacity); */
   /* background-color: rgba(var(--bg-color), 0.8); */
   backdrop-filter: blur(2px);
-  border-color:0.5px solid var(--border-color);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.10);
-  
-  .container{
+  border-color: 0.5px solid var(--border-color);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+
+  .container {
     display: flow-root;
     opacity: 1;
     height: 100%;
@@ -77,7 +77,7 @@ body{
     width: 140px;
     height: 100%;
 
-    img{
+    img {
       height: 100%;
     }
   }
@@ -90,31 +90,31 @@ body{
       list-style: none;
       height: 100%;
 
-      &:not(:last-child){
-        margin-right: .5rem;
+      &:not(:last-child) {
+        margin-right: 0.5rem;
       }
 
-      a.active{
+      a.active {
         font-weight: 700;
       }
     }
 
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       display: none;
     }
   }
-  .mobile-menu{
+  .mobile-menu {
     display: none;
     float: right;
     width: 20px;
     height: 100%;
 
-    .menu-btn{
+    .menu-btn {
       width: 100%;
       height: 100%;
       position: relative;
 
-      span{
+      span {
         position: absolute;
         right: 0;
         top: 50%;
@@ -124,37 +124,36 @@ body{
         border-radius: 1px;
         background-color: var(--primary-color);
         transition: all 0.3s;
-        
-        &:first-child{
-          top: calc( 50% - 8px);
+
+        &:first-child {
+          top: calc(50% - 8px);
         }
-        
-        &:last-child{
-          top: calc( 50% + 8px);
+
+        &:last-child {
+          top: calc(50% + 8px);
         }
       }
     }
 
-    .menu-btn.active{
-      span{
-        &:first-child{
+    .menu-btn.active {
+      span {
+        &:first-child {
           top: 50%;
           transform: rotate(45deg);
         }
-        
-        &:last-child{
+
+        &:last-child {
           top: 50%;
           transform: rotate(-45deg);
         }
 
-        &:nth-child(2){
+        &:nth-child(2) {
           opacity: 0;
         }
       }
     }
-    
 
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       display: block;
     }
   }
@@ -173,22 +172,20 @@ ul {
   gap: 8px;
 } */
 
-
-
 /*=================================================
         [Main : drink-wrap]
 =================================================*/
-.drink-wrap{
+.drink-wrap {
   margin-top: 50px;
   padding: 1.875rem 0;
 
-  @media (min-width:768px){
-    .container{    
+  @media (min-width: 768px) {
+    .container {
       display: flow-root;
     }
   }
 
-  .drink-item{
+  .drink-item {
     position: relative;
     width: 100%;
     border: 1px solid #e6e6e6;
@@ -199,92 +196,91 @@ ul {
     background-color: var(--product-bg-color);
     cursor: pointer;
 
-    img{
+    img {
       max-width: 100%;
       height: 100%;
       aspect-ratio: 2/3;
       margin: 0 auto;
     }
 
-    .drink-text{
+    .drink-text {
       text-align: center;
       color: var(--text-color);
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
 
-    .drink-info{
+    .drink-info {
       display: none;
       position: absolute;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, 0.60);
+      background-color: rgba(255, 255, 255, 0.6);
       padding: 30px 20px;
       cursor: initial;
 
-
-      .close-btn{
+      .close-btn {
         position: absolute;
         top: 30px;
         right: 20px;
 
-        img{
+        img {
           width: 20px;
           height: 20px;
         }
       }
 
-      .info-title{
+      .info-title {
         font-weight: 400;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         border-bottom: 2px solid var(--text-color);
 
-        .ko-title{
+        .ko-title {
           font-size: 1.125rem;
           color: var(--text-color);
-          margin-bottom: .5rem;
+          margin-bottom: 0.5rem;
         }
-        .en-title{
-          font-size: .875rem;
-          color:var(--subtext-color);
+        .en-title {
+          font-size: 0.875rem;
+          color: var(--subtext-color);
         }
       }
 
-      .info-content{
+      .info-content {
         font-size: 1rem;
         color: var(--text-color);
         line-height: 1.4;
         word-break: keep-all;
       }
 
-      .info-cal{
+      .info-cal {
         position: absolute;
         bottom: 30px;
         left: 20px;
-        width: calc( 100% - 40px);
+        width: calc(100% - 40px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         font-size: 13px;
 
-        p{
+        p {
           width: 100%;
           padding: 2px 0;
           white-space: nowrap;
-          
-          &:nth-child(2n-1){
+
+          &:nth-child(2n-1) {
             border-right: 1px solid var(--text-color);
-          } 
-          &:nth-child(2n){
+          }
+          &:nth-child(2n) {
             padding-left: 20px;
           }
         }
       }
     }
 
-    &.active{
-      .drink-info{
+    &.active {
+      .drink-info {
         display: block;
       }
     }
@@ -310,13 +306,13 @@ ul {
   }
 }
 
-.drink-wrap{
-  .container{
+.drink-wrap {
+  .container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr) ;
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
 
-    .drink-item{
+    .drink-item {
       width: 100%;
     }
 
