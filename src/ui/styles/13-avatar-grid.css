@@ -1,0 +1,29 @@
+@import "/src/common/modern-reset.css";
+@import "/src/common/theme.css";
+@import "/src/ui/components/avatar/avatar.css";
+
+.img-avatar .state {
+  position: initial;
+}
+
+/* grid활용하기 */
+.img-avatar {
+  display: grid;
+
+  img,
+  figcaption {
+    grid-area: 1/1/2/2;
+  }
+
+  figcaption {
+    /* align-self: end; */
+    /* justify-self: end; */
+    place-self: end;
+  }
+}
+
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
