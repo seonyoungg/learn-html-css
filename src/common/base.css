@@ -1,8 +1,4 @@
-/*=================================================
-        [CSS 스타일 초기화]
-=================================================*/
-
-/* 기본스타일 */
+/* body 스타일 */
 body {
   font-family: "SUIT", sans-serif;
   color: #121212;
@@ -11,8 +7,16 @@ body {
   font-weight: 300;
 }
 
-/* 링크스타일 */
+/* 링크 스타일 */
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+}
+
+/* Components Container 스타일링 */
+.components-container {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 1rem;
+  padding: 1rem;
 }
