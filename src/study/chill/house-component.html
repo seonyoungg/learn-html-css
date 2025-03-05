@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="shortcut icon"
+      href="/src/assets/favicon/likelion.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css"
+    />
+    <link rel="stylesheet" href="./house-component.css" />
+  </head>
+  <body>
+    <!-- 로고 -->
+    <div>
+      <a href="#" class="logo-box" target="_blank" rel="noopener noreferrer">
+        <img src="./img/ohouse.png" alt="오늘의집로고" />
+      </a>
+    </div>
+
+    <!-- 이메일/비밀번호 -->
+    <fieldset>
+      <legend>이메일/비밀번호</legend>
+      <div class="floating-form email">
+        <input type="email" id="userID" name="userID" placeholder="" />
+        <label for="userID">이메일</label>
+      </div>
+      <div class="floating-form password">
+        <input
+          type="password"
+          id="userPwd"
+          name="userPwd"
+          placeholder=""
+          pattern=".{6,15}"
+        />
+        <label for="userPwd">비밀번호</label>
+      </div>
+    </fieldset>
+
+    <!-- 로그인버튼 -->
+    <fieldset>
+      <legend>로그인버튼</legend>
+      <button type="submit" class="login-btn">로그인</button>
+    </fieldset>
+
+    <!-- a링크 -->
+    <div class="link-text">
+      <a href="#" target="" rel="noopener noreferrer">비밀번호 재설정</a>
+      <a href="#" target="" rel="noopener noreferrer">회원가입</a>
+    </div>
+
+    <!-- sns링크 -->
+    <div class="sns-link">
+      <p>SNS계정으로 간편 로그인/회원가입</p>
+      <div class="sns-icon">
+        <a href="#">
+          <img src="./img/facebook.png" alt="facebook아이콘" />
+        </a>
+        <a href="#"> <img src="./img/kakao.png" alt="kakao아이콘" /></a>
+        <a href="#"> <img src="./img/naver.png" alt="naver아이콘" /></a>
+      </div>
+      <a href="#" class="help-text">로그인에 문제가 있으신가요?</a>
+    </div>
+
+    <!-- help-text -->
+    <a href="#" class="help-text">비회원 주문 조회하기</a>
+
+    <!-- copyright -->
+    <div class="copyright">
+      <small>
+        <a href="#">&copy; bucketplace, Co., Ltd..</a>
+        All Rights Reserved
+      </small>
+    </div>
+
+    <!-- floating-label -->
+    <!-- <div class="floating-label">
+      <input type="email" id="float-test" name="float-test" placeholder="" />
+      <label for="float-test">아이디/이메일</label>
+    </div> -->
+  </body>
+</html>

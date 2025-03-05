@@ -95,6 +95,7 @@
   input {
     width: 100%;
     padding: 20px 16px 8px 16px;
+    border-radius: 8px;
     outline: none;
     border: none;
   }
@@ -106,7 +107,7 @@
     left: 16px;
     font-size: 16px;
     color: #333;
-    pointer-events: none;
+    background: #fff;
     transition: all 0.3s ease;
   }
 
@@ -119,5 +120,19 @@
   input:not(:placeholder-shown) + label {
     top: 12px;
     font-size: 12px;
+  }
+}
+
+.floating-label {
+  input {
+    position: relative;
+  }
+  input:focus::placeholder {
+    color: rgb(167, 175, 255);
+    font-size: 10px;
+    position: absolute;
+    top: -0.0625rem;
+    left: 0.225rem;
+    transition: all 0.4s ease;
   }
 }
