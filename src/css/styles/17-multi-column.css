@@ -3,6 +3,7 @@
 @import "/src/common/a11y.css";
 @import "/src/common/base.css";
 
+/* 다단 레이아웃을 적용한 컨테이너 */
 .container {
   background: yellow;
   padding: 1rem;
@@ -55,4 +56,11 @@
     column-fill: auto;
     /* column-fill: balance; */
   }
+}
+
+.wrapper {
+  background: pink;
+  padding: 1rem;
+  columns: 5;
+  break-after: always;
 }
