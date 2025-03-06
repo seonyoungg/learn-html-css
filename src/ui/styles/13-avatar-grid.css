@@ -8,22 +8,44 @@
 
 /* grid활용하기 */
 .img-avatar {
-  display: grid;
+  /* display: grid; */
 
   img,
   figcaption {
-    grid-area: 1/1/2/2;
+    /* grid-area: 1/1/2/2; */
   }
 
   figcaption {
     /* align-self: end; */
     /* justify-self: end; */
-    place-self: end;
+    /* place-self: end; */
   }
 }
 
-.grid-box {
+/* .grid-box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+} */
+
+.img-avatar {
+  border: 1px solid black;
+  display: grid;
+
+  img {
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    /* grid-area: 1/1/2/3; */
+  }
+
+  figcaption {
+    grid-column: 1/2;
+    grid-row: 1/3;
+
+    align-self: end;
+    justify-self: end;
+
+    /* grid-area: 1/1/2/3; */
+  }
 }
