@@ -2,3 +2,57 @@
 @import "/src/common/theme.css";
 @import "/src/common/a11y.css";
 @import "/src/common/base.css";
+
+.container {
+  background: yellow;
+  padding: 1rem;
+
+  .case {
+    background: #fff;
+    border: 1px solid blue;
+    margin-block: 20px;
+  }
+
+  /* case-01  : column-width */
+  .case-01 {
+    column-width: 15rem;
+    column-rule: 1px solid red;
+    column-gap: 3rem;
+  }
+
+  /* case-02  : column-count */
+  .case-02 {
+    column-count: 4;
+    column-rule: 1px dotted darkblue;
+
+    span {
+      /* display:block 과 column-span:all 은 함께 사용 */
+      display: block;
+      column-span: all;
+      background-color: skyblue;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  /* case-03  : columns 단축속성에 column-width 선언 */
+  .case-03 {
+    columns: 10rem;
+    column-rule: 1px dashed green;
+  }
+
+  /* case-04  : columns 단축속성에 column-count 선언 */
+  .case-04 {
+    columns: 5;
+    column-rule: 5px double hotpink;
+    column-gap: 3rem;
+  }
+
+  /* case-05  : column-fill */
+  /* balance가 기본값 / auto사용시 높이 지정해줘야함 */
+  .case-05 {
+    columns: 2;
+    max-height: 100px;
+    column-fill: auto;
+    /* column-fill: balance; */
+  }
+}
