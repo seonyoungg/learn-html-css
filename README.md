@@ -1,4 +1,4 @@
-###### Likelion Front-end School
+### Likelion Front-end School
 
 # HTML/CSS
 
